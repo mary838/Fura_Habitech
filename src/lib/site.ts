@@ -69,6 +69,7 @@ export const SITE_ROUTES: SiteRoute[] = [
   { path: "/companies/habitech-construction", changeFrequency: "monthly", priority: 0.8 },
   { path: "/companies/habitech-development", changeFrequency: "monthly", priority: 0.8 },
   { path: "/companies/habitech-property", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/companies/habitech-training", changeFrequency: "monthly", priority: 0.8 },
 
   { path: "/properties", changeFrequency: "weekly", priority: 0.9 },
   { path: "/properties/habitech-residences", changeFrequency: "monthly", priority: 0.8 },
