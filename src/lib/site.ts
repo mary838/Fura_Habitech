@@ -32,7 +32,7 @@ export const ORGANISATION = {
   legalName: "FURA Australia Pty Ltd",
   acn: "685 099 674",
   telephone: "+61 7 3000 0000",
-  email: "info@furahabitech.com",
+  email: "enquiries@furahabitech.com.au",
   streetAddress: "Level 12, 1 Eagle Street",
   addressLocality: "Brisbane",
   addressRegion: "QLD",

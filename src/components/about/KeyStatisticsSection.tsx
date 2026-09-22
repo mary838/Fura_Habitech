@@ -10,7 +10,7 @@ export function KeyStatisticsSection() {
       <SectionHeading
         gap="lg"
         align="center"
-        title="Key Statistics"
+        title="FURA Australia Track Record"
         description="A snapshot of our experience, scale, and global reach across real asset investment and development."
       />
 

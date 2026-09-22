@@ -69,26 +69,34 @@ export const CAPABILITIES: string[] = [
 
 export type Statistic = {
   value: string;
-  label: string;
+  /** Omitted where the frame gives the tile a headline and no supporting line. */
+  label?: string;
 };
 
 /** Rendered as a centred pair above a three-up row, as in the design. */
 export const STATISTICS_PRIMARY: Statistic[] = [
-  { value: "15+", label: "Under AFSL License ensuring capital protection" },
-  { value: "+500", label: "+500 projects completed and + 15 countries served" },
+  { value: "+15 years experience in Fund Management" },
+  {
+    value: "AUD +500 million GDV",
+    label: "Construction project delivered in Australia",
+  },
 ];
 
 export const STATISTICS_SECONDARY: Statistic[] = [
   {
-    value: "> USD 750M",
+    value: "Australian Standards",
     label:
-      "Frefab & Modular construction Materials exported in more than 10 countries",
+      "Licensed engineering & construction operations, with certified materials exported to 10+ countries.",
   },
   {
-    value: "> USD 250M",
-    label: "Years in Asset Development & Cross-border Capital Management",
+    value: "6 Integrated Companies",
+    label:
+      "One-stop solution from design to turnkey completion, reducing project and execution risks.",
   },
-  { value: "6", label: "Global Real Asset Platform in 6 Countries" },
+  {
+    value: "6-Country Investment Platform",
+    label: "Connecting global capital with local real assets.",
+  },
 ];
 
 export type NewsItem = {
@@ -100,6 +108,12 @@ export type NewsItem = {
 };
 
 export const NEWS_ITEMS: NewsItem[] = [
+  {
+    image: "/fura/images/news-nus-chongqing.png",
+    title:
+      "Agreement signing between FURA and NUS Chongqing Institute to collaborate on Modern Methods of Construction, education and industry innovation in Australia.",
+    date: "May 2, 2026",
+  },
   {
     image: "/fura/images/news-ppap-sez.png",
     title:

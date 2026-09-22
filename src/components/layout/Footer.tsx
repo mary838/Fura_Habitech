@@ -104,10 +104,10 @@ export function Footer({ contact = true }: { contact?: boolean }) {
                 +61 7 3000 0000
               </a>
               <a
-                href="mailto:info@furahabitech.com"
+                href="mailto:enquiries@furahabitech.com.au"
                 className="tap-pad w-fit transition-opacity hover:opacity-70 active:opacity-70"
               >
-                info@furahabitech.com
+                enquiries@furahabitech.com.au
               </a>
             </div>
           </div>

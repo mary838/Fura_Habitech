@@ -81,10 +81,10 @@ export default function PrivacyPage() {
                 For questions about this policy or to access or correct your
                 personal information, contact us at{" "}
                 <a
-                  href="mailto:info@furahabitech.com"
+                  href="mailto:enquiries@furahabitech.com.au"
                   className="font-medium text-title underline"
                 >
-                  info@furahabitech.com
+                  enquiries@furahabitech.com.au
                 </a>
                 .
               </p>

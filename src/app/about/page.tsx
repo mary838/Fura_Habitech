@@ -37,8 +37,8 @@ export default function AboutPage() {
         overlayImage="linear-gradient(257.6deg, rgba(255, 255, 255, 0.35) 22.702%, rgba(0, 0, 0, 0.35) 64.026%)"
         align="center"
       />
-      <AboutIntroSection />
       <OrganigramSection />
+      <AboutIntroSection />
       <VisionSection />
       <KeyStatisticsSection />
       <NewsSection />

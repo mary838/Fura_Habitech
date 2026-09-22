@@ -4,8 +4,8 @@ import { PageShell } from "@/components/layout/PageShell";
 import { PageSchema } from "@/components/seo/PageSchema";
 import { BuildingSystemsSection } from "@/components/companies/BuildingSystemsSection";
 import { DevelopmentHeroSection } from "@/components/companies/DevelopmentHeroSection";
-import { DevelopmentStatsSection } from "@/components/companies/DevelopmentStatsSection";
 import { EnvironmentalSection } from "@/components/companies/EnvironmentalSection";
+import { WhatWeOfferSection } from "@/components/companies/WhatWeOfferSection";
 
 export const metadata: Metadata = pageMetadata({
   title: "Habitech Development",
@@ -24,9 +24,9 @@ export default function HabitechDevelopmentPage() {
         ]}
       />
       <DevelopmentHeroSection />
+      <WhatWeOfferSection />
       <EnvironmentalSection />
       <BuildingSystemsSection />
-      <DevelopmentStatsSection />
     </PageShell>
   );
 }

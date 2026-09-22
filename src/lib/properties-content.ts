@@ -313,6 +313,11 @@ export const HABITECH_RESIDENCES_SPECS: {
 }[] = [
   {
     icon: "/fura/icons/home-02.svg",
+    label: "Class B",
+    value: "Construction financing, Units presales",
+  },
+  {
+    icon: "/fura/icons/home-02.svg",
     label: "Project Type",
     value: "5 Storey Apartment",
   },
@@ -334,7 +339,7 @@ export const HABITECH_RESIDENCES_SPECS: {
   { icon: "/fura/icons/building-03.svg", label: "Unit", value: "35" },
   {
     icon: "/fura/icons/expand-03.svg",
-    label: "Size",
+    label: "Size:",
     value: "3458 sqm NSA",
   },
   {
@@ -363,6 +368,11 @@ export const WOLLOONGABBA_COLLECTIVE_SPECS: {
 }[] = [
   {
     icon: "/fura/icons/home-02.svg",
+    label: "Class A",
+    value: "Land Acquisition & DA Uplift",
+  },
+  {
+    icon: "/fura/icons/home-02.svg",
     label: "Project Status",
     value: "Land Acquisition & DA Proposal",
   },
@@ -373,14 +383,15 @@ export const WOLLOONGABBA_COLLECTIVE_SPECS: {
   },
   { icon: "/fura/icons/expand-03.svg", label: "Size", value: "10,336 sqm" },
   {
+    // The frame repeats the "Investment Strategy" label here, on tag-02.
     icon: "/fura/icons/tag-02.svg",
-    label: "Construction price",
-    value: "A$ 170,000 (+5% Fura Management fee)",
+    label: "Investment Strategy",
+    value: "Land Acquisition, 24 months",
   },
   {
     icon: "/fura/icons/calendar.svg",
     label: "Completion time",
-    value: "2027-2029",
+    value: "2028",
   },
   {
     icon: "/fura/icons/marker-pin-01.svg",
@@ -388,6 +399,7 @@ export const WOLLOONGABBA_COLLECTIVE_SPECS: {
     value: "Woolloongabba, Brisbane",
   },
 ];
+
 
 export const TIMOR_AVENUE_1_IMAGE = "/fura/properties/listings/timor-avenue-1.png";
 export const TIMOR_AVENUE_1_PRICE = "900k AUD";
@@ -506,14 +518,14 @@ export const WINGHOUSE_S_DETAIL_SPECS: {
   {
     icon: "/fura/icons/home-02.svg",
     label: "Project Status",
-    value: "Secondary dwelling",
+    value: "Open to Landlords",
   },
   { icon: "/fura/icons/building-03.svg", label: "Unit:", value: "1 Bedroom" },
   { icon: "/fura/icons/expand-03.svg", label: "Size:", value: "41 m²" },
   {
     icon: "/fura/icons/tag-02.svg",
     label: "Construction price",
-    value: "A$ 170,000 (+5% Fura Management fee)",
+    value: "150 k",
   },
   {
     icon: "/fura/icons/calendar.svg",
@@ -527,12 +539,28 @@ export const WINGHOUSE_S_DETAIL_SPECS: {
   },
 ];
 
+/**
+ * All 13 photos, in the order the lightbox's thumbnail strip lists them.
+ * The first five are also the collage tiles on the detail page: plan,
+ * bathroom, living, kitchen, bedroom.
+ *
+ * p1 is the floor plan with the highlighted room, which the listing card
+ * does not use — hence its own file rather than the shared listings/ image.
+ */
 export const WINGHOUSE_M_GALLERY = [
-  "/fura/properties/listings/winghouse-m.png",
+  "/fura/properties/winghouse-m/p1.png",
   "/fura/properties/winghouse-m/p2.png",
   "/fura/properties/winghouse-m/p3.png",
   "/fura/properties/winghouse-m/p4.png",
   "/fura/properties/winghouse-m/p5.png",
+  "/fura/properties/winghouse-m/p6.png",
+  "/fura/properties/winghouse-m/p7.png",
+  "/fura/properties/winghouse-m/p8.png",
+  "/fura/properties/winghouse-m/p9.png",
+  "/fura/properties/winghouse-m/p10.png",
+  "/fura/properties/winghouse-m/p11.png",
+  "/fura/properties/winghouse-m/p12.png",
+  "/fura/properties/winghouse-m/p13.png",
 ];
 
 export const WINGHOUSE_M_PRICE = "$170k";
@@ -548,7 +576,7 @@ export const WINGHOUSE_M_DETAIL_SPECS: {
   {
     icon: "/fura/icons/home-02.svg",
     label: "Project Status",
-    value: "Secondary dwelling",
+    value: "Open to Landlords",
   },
   { icon: "/fura/icons/building-03.svg", label: "Unit:", value: "2 Bedroom" },
   { icon: "/fura/icons/expand-03.svg", label: "Size:", value: "63 m²" },
@@ -569,12 +597,17 @@ export const WINGHOUSE_M_DETAIL_SPECS: {
   },
 ];
 
+/**
+ * All 6 photos, in the order the lightbox's thumbnail strip lists them.
+ * The first five are also the collage tiles on the detail page.
+ */
 export const WINGHOUSE_L_GALLERY = [
   "/fura/properties/listings/winghouse-l.png",
   "/fura/properties/winghouse-l/p2.png",
   "/fura/properties/winghouse-l/p3.png",
   "/fura/properties/winghouse-l/p4.png",
   "/fura/properties/winghouse-l/p5.png",
+  "/fura/properties/winghouse-l/p6.png",
 ];
 
 export const WINGHOUSE_L_PRICE = "$190k";
@@ -590,14 +623,14 @@ export const WINGHOUSE_L_DETAIL_SPECS: {
   {
     icon: "/fura/icons/home-02.svg",
     label: "Project Status",
-    value: "Secondary dwelling",
+    value: "Open to Landlords",
   },
   { icon: "/fura/icons/building-03.svg", label: "Unit:", value: "Office" },
-  { icon: "/fura/icons/expand-03.svg", label: "Size:", value: "19m²" },
+  { icon: "/fura/icons/expand-03.svg", label: "Size:", value: "79 m²" },
   {
     icon: "/fura/icons/tag-02.svg",
     label: "Construction price",
-    value: "A$ 170,000 (+5% Fura Management fee)",
+    value: "190k",
   },
   {
     icon: "/fura/icons/calendar.svg",
@@ -620,7 +653,9 @@ export const FURA_LIVING_KELVYNGROOVE_GALLERY = [
   "/fura/properties/fura-living-kelvyngroove/p4.png",
 ];
 
-export const FURA_LIVING_KELVYNGROOVE_PRICE = "50 m AUD";
+// The frames put the land size, not a dollar figure, in the headline slot;
+// the 50 m AUD figure is the Gross Development Value row below.
+export const FURA_LIVING_KELVYNGROOVE_PRICE = "15 Ha";
 
 export const FURA_LIVING_KELVYNGROOVE_DESCRIPTION =
   "Spacious, contemporary and thoughtfully designed, the 63 sqm secondary dwelling delivers comfortable living with the perfect balance of functionality and style. Featuring two bedrooms and open-plan living, it is ideal for small families, downsizers, rental investment or multi-generational living.";
@@ -630,6 +665,16 @@ export const FURA_LIVING_KELVYNGROOVE_DETAIL_SPECS: {
   label: string;
   value: string;
 }[] = [
+  {
+    icon: "/fura/icons/home-02.svg",
+    label: "Class A",
+    value: "DA Uplift",
+  },
+  {
+    icon: "/fura/icons/home-02.svg",
+    label: "Class C",
+    value: "Affordable Housing",
+  },
   {
     icon: "/fura/icons/home-02.svg",
     label: "Project Status",
@@ -653,8 +698,8 @@ export const FURA_LIVING_KELVYNGROOVE_DETAIL_SPECS: {
   },
   {
     icon: "/fura/icons/building-05.svg",
-    label: "Development",
-    value: "Build to rent",
+    label: "Timeline",
+    value: "DA Uplift 12 months",
   },
   {
     icon: "/fura/icons/building-07.svg",
@@ -673,7 +718,9 @@ export const THE_LAKES_GALLERY = [
   "/fura/properties/the-lakes/p2.png",
 ];
 
-export const THE_LAKES_PRICE = "AUD 200 M";
+// The headline slot carries the land size, as Fura Living's does; the
+// AUD 200 M figure is the Gross Development Value row below.
+export const THE_LAKES_PRICE = "21.9 ha";
 
 export const THE_LAKES_DESCRIPTION =
   "The Lakes represents one of the largest proposed mixed-use waterfront tourism developments in Logan City, combining: 1,528 dwellings and accommodation units 5-star tourism infrastructure Convention and event facilities Retail and hospitality activation Extensive waterfront amenity";
@@ -683,6 +730,11 @@ export const THE_LAKES_DETAIL_SPECS: {
   label: string;
   value: string;
 }[] = [
+  {
+    icon: "/fura/icons/home-02.svg",
+    label: "Class A",
+    value: "Landbank & DA Uplift",
+  },
   {
     icon: "/fura/icons/home-02.svg",
     label: "Project Status",

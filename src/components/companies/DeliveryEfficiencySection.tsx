@@ -34,15 +34,6 @@ export function DeliveryEfficiencySection() {
               </li>
             ))}
           </ol>
-
-          {/*
-            The frame fills this box with #f5f5f5 on a #f5f5f5 section, so it
-            reads as indented copy rather than a visible panel. Kept as-is.
-          */}
-          <p className="w-full rounded-md bg-surface-muted px-4 py-3 text-sm text-subtitle">
-            Lower labour requirements and shorter delivery periods may reduce
-            construction, holding and finance costs - supporting project margin.
-          </p>
         </div>
 
         {/* The four delivery stages, two up, in a 500px column beside the list. */}

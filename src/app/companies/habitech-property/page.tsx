@@ -3,11 +3,8 @@ import { pageMetadata } from "@/lib/seo";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageSchema } from "@/components/seo/PageSchema";
 import { CompanyHero } from "@/components/companies/CompanyHero";
-import { PropertyIntroSection } from "@/components/companies/PropertyIntroSection";
-import { PropertyManagementSection } from "@/components/companies/PropertyManagementSection";
-import { PropertyTimelineSection } from "@/components/companies/PropertyTimelineSection";
-import { PropertyCareSection } from "@/components/companies/PropertyCareSection";
-import { PropertyEcosystemSection } from "@/components/companies/PropertyEcosystemSection";
+import { PropertyServicesSection } from "@/components/companies/PropertyServicesSection";
+import { OurProjectsSection } from "@/components/home/OurProjectsSection";
 
 export const metadata: Metadata = pageMetadata({
   title: "Habitech Real Estate Property",
@@ -33,11 +30,9 @@ export default function HabitechPropertyPage() {
         ctaLabel="Partner With Us"
         ctaHref="#contact-form"
       />
-      <PropertyIntroSection />
-      <PropertyManagementSection />
-      <PropertyTimelineSection />
-      <PropertyCareSection />
-      <PropertyEcosystemSection />
+      <PropertyServicesSection />
+      {/* Same frame as the home page's, cards and CTA included. */}
+      <OurProjectsSection />
     </PageShell>
   );
 }

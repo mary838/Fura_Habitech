@@ -10,7 +10,11 @@ export function StatCard({ value, label }: Statistic) {
           value={value}
           className="text-display-xs font-medium text-title lg:text-display-sm"
         />
-        <p className="text-base font-medium text-subtitle lg:text-lg">{label}</p>
+        {label ? (
+          <p className="text-base font-medium text-subtitle lg:text-lg">
+            {label}
+          </p>
+        ) : null}
       </div>
     </div>
   );

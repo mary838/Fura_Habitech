@@ -18,9 +18,19 @@ export function EnvironmentalSection() {
           {SUSTAINABILITY_PILLARS.map((pillar) => (
             <article
               key={pillar.title}
-              className="group flex flex-col items-start gap-6 rounded-2xl border border-border-primary bg-surface p-6 card-hover hover:-translate-y-1 hover:shadow-lg active:-translate-y-1 active:shadow-lg touch:shadow-lg"
+              className="group relative flex flex-col items-start gap-6 overflow-hidden rounded-2xl border border-border-primary bg-surface p-6 card-hover hover:-translate-y-1 hover:shadow-lg active:-translate-y-1 active:shadow-lg touch:shadow-lg"
             >
-              <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-[#eaf0eb] transition-colors duration-200 ease-out group-hover:bg-brand-secondary group-active:bg-brand-secondary">
+              {/* Washed-out photo the frame lays behind every pillar card. */}
+              <Image
+                src="/fura/companies/development/pillar-bg.png"
+                alt=""
+                aria-hidden
+                fill
+                sizes="(min-width: 1024px) 384px, 100vw"
+                className="pointer-events-none object-cover"
+              />
+
+              <div className="relative flex size-16 shrink-0 items-center justify-center rounded-full bg-[#eaf0eb] transition-colors duration-200 ease-out group-hover:bg-brand-secondary group-active:bg-brand-secondary">
                 <Image
                   src={pillar.icon}
                   alt=""
@@ -30,7 +40,7 @@ export function EnvironmentalSection() {
                 />
               </div>
 
-              <div className="flex w-full flex-col gap-4">
+              <div className="relative flex w-full flex-col gap-4">
                 <h3 className="text-display-xs font-semibold text-title">
                   {pillar.title}
                 </h3>
