@@ -70,47 +70,60 @@ export function FuraLivingDetailSection({
           </div>
         </Reveal>
 
-        <div className="order-3 flex w-full flex-col items-start overflow-hidden rounded-xl border border-border-primary">
-          <div className="flex h-[70px] w-full shrink-0 items-center bg-surface-muted p-5">
-            <p className="text-xl font-medium text-title">Properties Detail</p>
-          </div>
-          {specs.map((spec) => (
-            <div
-              key={spec.label}
-              className="flex h-[70px] w-full shrink-0 items-center justify-between border-t border-border-primary bg-surface-muted p-5"
-            >
-              <span className="flex shrink-0 items-center gap-3">
-                <Image
-                  src={spec.icon}
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="size-5"
-                />
-                <span className="text-sm font-medium whitespace-nowrap text-subtitle">
-                  {spec.label}
-                </span>
-              </span>
-              <span className="min-w-0 flex-1 truncate text-right text-base font-semibold text-title">
-                {spec.value}
-              </span>
+        {/*
+          The table and the brochure button are one 32px-gap stack in both
+          frames (Frame 101), not two items of the section's 64px rhythm.
+        */}
+        <div className="order-3 flex w-full flex-col items-start gap-8">
+          <div className="flex w-full flex-col items-start overflow-hidden rounded-xl border border-border-primary">
+            {/*
+              This table carries eleven rows, so both frames draw it denser
+              than the other properties': 51.56px rows rather than 70px, at
+              every width. The height is a minimum — a value that wraps on a
+              phone grows its row, and nothing here may be `nowrap`, since
+              the table clips its overflow.
+            */}
+            <div className="flex min-h-[52px] w-full shrink-0 items-center bg-surface-muted px-5 py-2.5">
+              <p className="text-xl font-medium text-title">Properties Detail</p>
             </div>
-          ))}
-        </div>
+            {specs.map((spec) => (
+              <div
+                key={spec.label}
+                className="flex min-h-[52px] w-full shrink-0 items-center justify-between gap-3 border-t border-border-primary bg-surface-muted px-5 py-2.5 lg:gap-4"
+              >
+                <span className="flex min-w-0 flex-1 items-center gap-3 lg:flex-none">
+                  <Image
+                    src={spec.icon}
+                    alt=""
+                    width={20}
+                    height={20}
+                    className="size-5 shrink-0"
+                  />
+                  <span className="min-w-0 text-sm font-medium text-subtitle">
+                    {spec.label}
+                  </span>
+                </span>
+                <span className="min-w-0 flex-1 text-right text-base font-semibold text-title">
+                  {spec.value}
+                </span>
+              </div>
+            ))}
+          </div>
 
-        <a
-          href="#contact-form"
-          className="order-4 flex w-full items-center justify-center gap-1.5 overflow-hidden rounded-full border border-utility-gray-900 bg-surface px-[18px] py-3 text-base font-semibold text-title transition-colors hover:bg-surface-muted active:bg-surface-muted"
-        >
-          <Image
-            src="/fura/icons/download-cloud-02.svg"
-            alt=""
-            width={20}
-            height={20}
-            className="size-5"
-          />
-          Download Project Brochure
-        </a>
+          <a
+            href="#contact-form"
+            className="flex w-full items-center justify-center gap-1.5 overflow-hidden rounded-full border border-utility-gray-900 bg-surface px-[18px] py-3 text-base font-semibold text-title transition-colors hover:bg-surface-muted active:bg-surface-muted"
+          >
+            <Image
+              src="/fura/icons/download-cloud-02.svg"
+              alt=""
+              width={20}
+              height={20}
+              className="size-5"
+            />
+            Download Project Brochure
+          </a>
+        </div>
       </div>
     </section>
   );

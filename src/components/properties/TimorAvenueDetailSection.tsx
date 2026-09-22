@@ -41,7 +41,7 @@ export function TimorAvenueDetailSection({
           </span>
         </nav>
 
-        <div className="order-1 relative h-[220px] w-full shrink-0 overflow-hidden rounded-2xl lg:order-2 lg:h-[552px]">
+        <div className="order-1 relative h-[202px] w-full shrink-0 overflow-hidden rounded-2xl lg:order-2 lg:h-[553px]">
           <Image
             src={image}
             alt="Timor Avenue"
@@ -76,47 +76,60 @@ export function TimorAvenueDetailSection({
           </div>
         </Reveal>
 
-        <div className="order-3 flex w-full flex-col items-start overflow-hidden rounded-xl border border-border-primary">
-          <div className="flex h-[70px] w-full shrink-0 items-center bg-surface-muted p-5">
-            <p className="text-xl font-medium text-title">Properties Detail</p>
-          </div>
-          {specs.map((spec) => (
-            <div
-              key={spec.label}
-              className="flex h-[70px] w-full shrink-0 items-center justify-between border-t border-border-primary bg-surface-muted p-5"
-            >
-              <span className="flex shrink-0 items-center gap-3">
-                <Image
-                  src={spec.icon}
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="size-5"
-                />
-                <span className="text-sm font-medium whitespace-nowrap text-subtitle">
-                  {spec.label}
-                </span>
-              </span>
-              <span className="min-w-0 flex-1 truncate text-right text-base font-semibold text-title">
-                {spec.value}
-              </span>
+        {/*
+          The table and the brochure button are one 32px-gap stack in both
+          frames, not two items of the section's 64px rhythm.
+        */}
+        <div className="order-3 flex w-full flex-col items-start gap-8">
+          <div className="flex w-full flex-col items-start overflow-hidden rounded-xl border border-border-primary">
+            <div className="flex min-h-[70px] w-full shrink-0 items-center bg-surface-muted p-5 lg:min-h-[66px]">
+              <p className="text-xl font-medium text-title">Properties Detail</p>
             </div>
-          ))}
-        </div>
+            {/*
+              Label left, value right at every width. 70px is the row's
+              minimum rather than a fixed height: on a phone the longer
+              values wrap onto a second line and the row grows with them.
+              Nothing here may be `nowrap` — the table clips its overflow,
+              so a line that cannot wrap is simply lost.
+            */}
+            {specs.map((spec) => (
+              <div
+                key={spec.label}
+                className="flex min-h-[70px] w-full shrink-0 items-center justify-between gap-3 border-t border-border-primary bg-surface-muted p-5 lg:min-h-[66px] lg:gap-4"
+              >
+                <span className="flex min-w-0 flex-1 items-center gap-3 lg:flex-none">
+                  <Image
+                    src={spec.icon}
+                    alt=""
+                    width={20}
+                    height={20}
+                    className="size-5 shrink-0"
+                  />
+                  <span className="min-w-0 text-sm font-medium text-subtitle">
+                    {spec.label}
+                  </span>
+                </span>
+                <span className="min-w-0 flex-1 text-right text-base font-semibold text-title">
+                  {spec.value}
+                </span>
+              </div>
+            ))}
+          </div>
 
-        <a
-          href="#contact-form"
-          className="order-4 flex w-full items-center justify-center gap-1.5 overflow-hidden rounded-full border border-brand-primary bg-surface px-[18px] py-3 text-base font-semibold text-subtitle transition-colors hover:bg-surface-muted active:bg-surface-muted"
-        >
-          <Image
-            src="/fura/icons/download-cloud-02.svg"
-            alt=""
-            width={20}
-            height={20}
-            className="size-5"
-          />
-          Download Project Brochure
-        </a>
+          <a
+            href="#contact-form"
+            className="flex w-full items-center justify-center gap-1.5 overflow-hidden rounded-full border border-brand-primary bg-surface px-[18px] py-3 text-base font-semibold text-subtitle transition-colors hover:bg-surface-muted active:bg-surface-muted"
+          >
+            <Image
+              src="/fura/icons/download-cloud-02.svg"
+              alt=""
+              width={20}
+              height={20}
+              className="size-5"
+            />
+            Download Project Brochure
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -60,27 +60,35 @@ export function HabitechResidencesDetailSection() {
         </Reveal>
 
         <div className="order-3 flex w-full flex-col items-start overflow-hidden rounded-xl border border-border-primary">
-          <div className="flex h-[70px] w-full shrink-0 items-center bg-surface-muted p-5">
+          <div className="flex min-h-[70px] w-full shrink-0 items-center bg-surface-muted p-5">
             <p className="text-xl font-medium text-title">Properties Detail</p>
           </div>
+          {/*
+            Label left, value right at every width, as both frames draw it.
+            70px is the row's minimum rather than a fixed height: on a phone
+            the long values ("Construction financing, Units presales", the
+            street address) wrap onto two or three lines and the row grows
+            with them. Nothing here may be `nowrap` — the table clips its
+            overflow, so a line that cannot wrap is simply lost.
+          */}
           {HABITECH_RESIDENCES_SPECS.map((spec) => (
             <div
               key={spec.label}
-              className="flex h-[70px] w-full shrink-0 items-center justify-between border-t border-border-primary bg-surface-muted p-5"
+              className="flex min-h-[70px] w-full shrink-0 items-center justify-between gap-3 border-t border-border-primary lg:gap-4 bg-surface-muted p-5"
             >
-              <span className="flex items-center gap-3">
+              <span className="flex min-w-0 flex-1 items-center gap-3 lg:flex-none">
                 <Image
                   src={spec.icon}
                   alt=""
                   width={20}
                   height={20}
-                  className="size-5"
+                  className="size-5 shrink-0"
                 />
-                <span className="text-sm font-medium whitespace-nowrap text-subtitle">
+                <span className="min-w-0 text-sm font-medium text-subtitle">
                   {spec.label}
                 </span>
               </span>
-              <span className="min-w-0 flex-1 text-right text-base font-semibold whitespace-nowrap text-title">
+              <span className="min-w-0 flex-1 text-right text-base font-semibold text-title">
                 {spec.value}
               </span>
             </div>

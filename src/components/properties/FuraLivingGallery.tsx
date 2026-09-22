@@ -98,10 +98,10 @@ export function FuraLivingGallery({ images, alt }: FuraLivingGalleryProps) {
           role="dialog"
           aria-modal="true"
           aria-label={alt}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 bg-[rgba(34,35,37,0.9)] px-4 py-6 backdrop-blur-[5.5px] lg:px-[64px]"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 overflow-hidden bg-[rgba(34,35,37,0.9)] px-4 py-6 backdrop-blur-[5.5px] lg:px-[64px]"
           onClick={() => setOpenIndex(null)}
         >
-          <div className="flex w-full max-w-[1248px] items-center justify-end">
+          <div className="flex w-full max-w-[1248px] shrink-0 items-center justify-end">
             <button
               type="button"
               onClick={() => setOpenIndex(null)}
@@ -119,22 +119,30 @@ export function FuraLivingGallery({ images, alt }: FuraLivingGalleryProps) {
             </button>
           </div>
 
-          <div
-            className="relative aspect-[1024/578] w-full max-w-[1024px] shrink-0 overflow-hidden rounded-2xl"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <Image
-              src={images[openIndex]}
-              alt={alt}
-              fill
-              sizes="(min-width: 1024px) 1024px, 100vw"
-              quality={95}
-              className="object-cover"
-            />
+          <div className="flex w-full min-h-0 flex-1 items-center justify-center">
+            <div
+              className="relative aspect-[1024/578] max-h-full w-full max-w-[1024px] overflow-hidden rounded-2xl border border-border-primary bg-[#383839]"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <Image
+                src={images[openIndex]}
+                alt={alt}
+                fill
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                quality={95}
+                className="object-contain"
+              />
+            </div>
           </div>
 
+          {/*
+            The strip is the same 1024px column as the image above it, with
+            the thumbnails running from its left edge — the frames draw it as
+            `px-[208px]` on a 1440 pop-up. Longer sets scroll inside that
+            column rather than widening it.
+          */}
           <div
-            className="flex w-full max-w-[1024px] items-center gap-2 overflow-x-auto px-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex w-full max-w-[1024px] shrink-0 items-center gap-2 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             onClick={(event) => event.stopPropagation()}
           >
             {images.map((image, index) => (
