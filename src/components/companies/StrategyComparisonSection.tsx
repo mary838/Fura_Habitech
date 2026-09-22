@@ -72,13 +72,12 @@ export function StrategyComparisonSection() {
             widths where the whole table already fits.
           */}
           <ScrollHint label="Strategy comparison">
-            <div className="min-w-[1200px] overflow-hidden rounded-lg border border-border-primary text-sm">
+            <div className="min-w-[900px] overflow-hidden rounded-lg border border-border-primary text-sm">
               <div className="flex w-full items-start gap-4 bg-utility-gray-900 px-6 py-4 font-medium text-white">
-                <p className="w-[200px] shrink-0">STRATEGY</p>
-                <p className="w-[180px] shrink-0">TARGET RETURN</p>
-                <p className="w-[160px] shrink-0">TYPICAL HOLD</p>
-                <p className="w-[320px] shrink-0">KEY FOCUS</p>
-                <p className="min-w-0 flex-1">SUITED FOR</p>
+                <p className="min-w-0 flex-1">STRATEGY</p>
+                <p className="min-w-0 flex-1">TARGET RETURN</p>
+                <p className="min-w-0 flex-1">TYPICAL HOLD</p>
+                <p className="min-w-0 flex-1">KEY FOCUS</p>
               </div>
 
               {FH_COMPARISON.map((row, index) => (
@@ -90,22 +89,17 @@ export function StrategyComparisonSection() {
                       : ""
                   }`}
                 >
-                  <div className="flex w-[200px] shrink-0 flex-col gap-1 whitespace-nowrap">
+                  <div className="flex min-w-0 flex-1 flex-col gap-1 whitespace-nowrap">
                     <p className="font-semibold text-title">{row.klass}</p>
                     <p className="text-subtitle">{row.strategy}</p>
                   </div>
-                  <div className="w-[180px] shrink-0 font-semibold text-title">
+                  <div className="min-w-0 flex-1 font-semibold text-title">
                     {row.targetReturn.map((line) => (
                       <p key={line}>{line}</p>
                     ))}
                   </div>
-                  <p className="w-[160px] shrink-0 text-subtitle">{row.hold}</p>
-                  <p className="w-[320px] shrink-0 text-subtitle">
-                    {row.focus}
-                  </p>
-                  <p className="min-w-0 flex-1 text-subtitle">
-                    {row.suitedFor}
-                  </p>
+                  <p className="min-w-0 flex-1 text-subtitle">{row.hold}</p>
+                  <p className="min-w-0 flex-1 text-subtitle">{row.focus}</p>
                 </div>
               ))}
             </div>

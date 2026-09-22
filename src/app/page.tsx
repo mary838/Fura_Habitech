@@ -6,7 +6,6 @@ import { OurProjectsSection } from "@/components/home/OurProjectsSection";
 import { PartnerRibbon } from "@/components/home/PartnerRibbon";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { StrategiesSection } from "@/components/home/StrategiesSection";
-import { WhyPartnerSection } from "@/components/home/WhyPartnerSection";
 
 export default function Home() {
   return (
@@ -14,10 +13,9 @@ export default function Home() {
       <HousingHero />
       <AboutSection />
       <StrategiesSection />
-      <OurProjectsSection />
       <PortfolioSection />
+      <OurProjectsSection />
       <GovernanceSection />
-      <WhyPartnerSection />
       <PartnerRibbon />
     </PageShell>
   );

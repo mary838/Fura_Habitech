@@ -21,7 +21,7 @@ export function OrganigramSection() {
         <SectionHeading
           align="center"
           title="A Global and Connected Real Asset Platform"
-          description="Corporate structure and global subsidiaries hierarchy"
+          description="First United Real Asset Platform connecting Singapore, USA, China, Cambodia, Japan and Australia"
           descriptionSize="base"
         />
 

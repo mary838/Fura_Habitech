@@ -42,17 +42,15 @@ export type ComparisonRow = {
   targetReturn: string[];
   hold: string;
   focus: string;
-  suitedFor: string;
 };
 
 export const FH_COMPARISON: ComparisonRow[] = [
   {
     klass: "CLASS A",
     strategy: "Landbank & DA uplift",
-    targetReturn: ["18–25% IRR"],
+    targetReturn: ["15-25% IRR"],
     hold: "12–24 months",
     focus: "Value creation through planning and DA uplift",
-    suitedFor: "Investors seeking higher return with shorter duration",
   },
   {
     klass: "CLASS B",
@@ -60,15 +58,13 @@ export const FH_COMPARISON: ComparisonRow[] = [
     targetReturn: ["15–20% IRR"],
     hold: "24–36 months",
     focus: "Development profit via efficient delivery",
-    suitedFor: "Investors seeking strong returns with moderate hold",
   },
   {
     klass: "CLASS C",
     strategy: "Build-to-Rent",
-    targetReturn: ["6–10% Yield", "+ Capital Growth"],
+    targetReturn: ["5-10% Yield", "+ Capital Growth"],
     hold: "5–7 years",
     focus: "Stable income through long-term rentals",
-    suitedFor: "Investors seeking income and capital preservation",
   },
 ];
 

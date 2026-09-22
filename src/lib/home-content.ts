@@ -133,40 +133,15 @@ export const GOVERNANCE_ITEMS: GovernanceItem[] = [
   },
   {
     num: "04",
-    title: "Asset backing",
+    title: "Global Asset Backing",
     description:
-      "Investment structure are backed by relevant underlying investments, subject to the governing deeds and priority arrangements.",
+      "Fura Habitech investment management company, with FURA Australia as guarantor, holds..",
   },
   {
     num: "05",
-    title: "Stage-gate controls",
+    title: "Stage-Gated Investment",
     description:
-      "Capital deployment, budgets, approvals and liquidity are monitored across the project lifecycle.",
-  },
-];
-
-export type ValueCard = {
-  icon: string;
-  title: string;
-  description: string;
-};
-
-export const VALUE_CARDS: ValueCard[] = [
-  {
-    icon: "/fura/icons/award-03.svg",
-    title: "Proven Track Record",
-    description: "Commitment to innovation, Green projects and",
-  },
-  {
-    icon: "/fura/icons/building-03.svg",
-    title: "Infrastructures",
-    description: "Defensive & Profitable Investment",
-  },
-  {
-    icon: "/fura/icons/globe-02.svg",
-    title: "Opportunities",
-    description:
-      "Global & Connected real Asset Platform across Singapore, Cambodia, United States, Japan, China and Australia",
+      "Capital deployed progressively across the project lifecycle — from SPV and land acquisition to construction, materials and unit sales or leasing.",
   },
 ];
 
@@ -186,6 +161,14 @@ export const PARTNERS: Partner[] = [
   },
   { logo: "/fura/partners/jane-box.png", name: "Jane-Box Co., Ltd" },
   { logo: "/fura/partners/open-build.png", name: "Open Build Pty Ltd" },
+  {
+    logo: "/fura/partners/national-university.png",
+    name: "National University",
+  },
+  {
+    logo: "/fura/partners/trade-investment-queensland.png",
+    name: "Trade Investment Queenland",
+  },
   { logo: "/fura/partners/ty-consultant.png", name: "TY Consultant Pty Ltd" },
   {
     logo: "/fura/partners/aad-sourcing.png",

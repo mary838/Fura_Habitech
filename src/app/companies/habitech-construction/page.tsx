@@ -5,7 +5,6 @@ import { PageSchema } from "@/components/seo/PageSchema";
 import { CompanyHero } from "@/components/companies/CompanyHero";
 import { ConstructionIntroSection } from "@/components/companies/ConstructionIntroSection";
 import { ConstructionProjectsSection } from "@/components/companies/ConstructionProjectsSection";
-import { ConstructionStatsSection } from "@/components/companies/ConstructionStatsSection";
 import { RegistrationsSection } from "@/components/companies/RegistrationsSection";
 
 export const metadata: Metadata = pageMetadata({
@@ -35,7 +34,6 @@ export default function HabitechConstructionPage() {
       <ConstructionIntroSection />
       <ConstructionProjectsSection />
       <RegistrationsSection />
-      <ConstructionStatsSection />
     </PageShell>
   );
 }

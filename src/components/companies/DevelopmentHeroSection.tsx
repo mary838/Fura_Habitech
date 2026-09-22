@@ -17,7 +17,7 @@ export function DevelopmentHeroSection() {
           <h1 className="text-display-xs font-medium text-title lg:text-display-md">
             Habitech Development Pty Ltd
           </h1>
-          <p className="text-xl text-subtitle lg:w-[396px]">
+          <p className="text-display-xs font-medium text-subtitle lg:w-[396px]">
             Integrated Construction Solutions
           </p>
         </div>

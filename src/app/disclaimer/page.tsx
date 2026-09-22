@@ -83,10 +83,10 @@ export default function DisclaimerPage() {
               <p>
                 Questions about this disclaimer can be sent to{" "}
                 <a
-                  href="mailto:info@furahabitech.com"
+                  href="mailto:enquiries@furahabitech.com.au"
                   className="font-medium text-title underline"
                 >
-                  info@furahabitech.com
+                  enquiries@furahabitech.com.au
                 </a>
                 .
               </p>

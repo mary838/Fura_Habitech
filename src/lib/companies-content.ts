@@ -118,28 +118,6 @@ export const DELIVERY_IMAGES: { src: string; alt: string }[] = [
   },
 ];
 
-export const MANUFACTURING_STATS: StatTile[] = [
-  {
-    label: "Years experience",
-    value: "17+",
-    icon: "/fura/icons/user-03.svg",
-  },
-  {
-    label: "Project completed",
-    value: "500+",
-    icon: "/fura/icons/certificate-01.svg",
-  },
-  {
-    label: "Country served",
-    value: "15+",
-    icon: "/fura/icons/globe-02.svg",
-  },
-  {
-    label: "Professional team",
-    value: "100+",
-    icon: "/fura/icons/award-03.svg",
-  },
-];
 
 export type ConstructionProject = {
   image: string;
@@ -230,23 +208,6 @@ export const CONSTRUCTION_REGISTRATIONS: string[] = [
   "Building Design — Services — DP-SD",
 ];
 
-export const CONSTRUCTION_STATS: StatTile[] = [
-  {
-    label: "Years experience",
-    value: "25+",
-    icon: "/fura/icons/user-03.svg",
-  },
-  {
-    label: "Project delivery",
-    value: "AUD 550M+",
-    icon: "/fura/icons/package.svg",
-  },
-  {
-    label: "Certifications",
-    value: "National",
-    icon: "/fura/icons/award-03.svg",
-  },
-];
 
 export type BuildingSystem = {
   image: string;
@@ -320,24 +281,6 @@ export const SUSTAINABILITY_PILLARS: SustainabilityPillar[] = [
   },
 ];
 
-export const DEVELOPMENT_STATS: StatTile[] = [
-  {
-    label: "Years experience",
-    value: "25+",
-    icon: "/fura/icons/stat-dev-years.svg",
-  },
-  {
-    label: "Project complete",
-    value: "80+",
-    icon: "/fura/icons/stat-dev-projects.svg",
-    iconIsContainer: true,
-  },
-  {
-    label: "Sustainable",
-    value: "Architecture approach",
-    icon: "/fura/icons/stat-dev-sustainable.svg",
-  },
-];
 
 export const PROPERTY_SHOWCASE: { image: string; label: string }[] = [
   { image: "/fura/companies/property/showcase-l.png", label: "Type L floor plan" },
@@ -365,44 +308,36 @@ export type IconCard = {
   description: string;
 };
 
-export const PROPERTY_MANAGEMENT_ITEMS: IconCard[] = [
+export const PROPERTY_SERVICES: IconCard[] = [
   {
     icon: "/fura/icons/eye.svg",
-    title: "Property Inspections",
+    title: "Asset Management",
     description:
-      "Executing structured routine check-ups on systems and common areas to mitigate risks and address structural degradation early.",
+      "Portfolio oversight, performance monitoring and value enhancement.",
   },
   {
     icon: "/fura/icons/users-02.svg",
-    title: "Resident & Tenant Support",
-    description:
-      "Providing smooth onboarding, prompt issue resolution, and streamlined communications to preserve premium tenant satisfaction.",
+    title: "Property Management",
+    description: "Day-to-day management, maintenance and tenant coordination.",
   },
   {
     icon: "/fura/icons/home-02.svg",
-    title: "Property Operations",
-    description:
-      "Managing daily administrative structures, utility contracts, and building operational efficiency with professional administrative focus.",
+    title: "Leasing & Sales",
+    description: "Leasing, sales coordination and market positioning.",
   },
   {
     icon: "/fura/icons/tool-02.svg",
-    title: "Maintenance Coordination",
-    description:
-      "Coordinating standard upkeep and prompt corrective tasks with highly experienced engineering partners to keep facilities in shape.",
+    title: "Operations",
+    description: "Building operations, facilities and service coordination.",
   },
   {
     icon: "/fura/icons/file-06.svg",
-    title: "Compliance & Documentation",
+    title: "Development Management",
     description:
-      "Securing alignment with updated municipal codes, tenant laws, security regulations, and property insurance policies.",
-  },
-  {
-    icon: "/fura/icons/bar-chart-02.svg",
-    title: "Reporting & Oversight",
-    description:
-      "Delivering real-time financial tracking, expense breakdowns, and comprehensive health dashboards of all asset categories.",
+      "Coordination of development, refurbishment and repositioning projects.",
   },
 ];
+
 
 export type TimelineStep = {
   number: string;
@@ -410,76 +345,8 @@ export type TimelineStep = {
   description: string;
 };
 
-export const PROPERTY_TIMELINE: TimelineStep[] = [
-  {
-    number: "01",
-    title: "Property Setup",
-    description:
-      "Initial inspection, comprehensive key inventory, system verification, and operational documentation.",
-  },
-  {
-    number: "02",
-    title: "Tenancy Management",
-    description:
-      "Regular garden upkeep, waste handling coordination, systematic HVAC checks, and cleaning oversight.",
-  },
-  {
-    number: "03",
-    title: "Maintenance & Repairs",
-    description:
-      "24/7 on-call technical team deployment for quick mechanical, plumbing, and structural restoration.",
-  },
-  {
-    number: "04",
-    title: "Long-Term Asset Management",
-    description:
-      "Capital reserves reporting, annual health evaluations, and long-range yield improvement mapping.",
-  },
-];
 
-export const PROPERTY_CARE_POINTS: { title: string; description: string }[] = [
-  {
-    title: "We manage every aspect of property care",
-    description:
-      "From key setup and systems validation on first handover to dynamic everyday maintenance calls and community rules preservation.",
-  },
-  {
-    title: "Responsive Tenant Communication",
-    description:
-      "Your renters connect to structured, reliable communication lines ensuring rapid fixes and seamless ongoing lease retention.",
-  },
-  {
-    title: "Long-Term Strategy",
-    description:
-      "Systematic building inspection loops and yield maps ensure physical infrastructure and capital values appreciate consistently over the decade.",
-  },
-  {
-    title: "Transparent Reporting",
-    description:
-      "Get total visibility on budgets, expenses, check-up logs, and compliance statuses with straightforward reporting dashboards.",
-  },
-];
 
-export const PROPERTY_ECOSYSTEM_ITEMS: IconCard[] = [
-  {
-    icon: "/fura/icons/layers-three-01.svg",
-    title: "Prime Development",
-    description:
-      "Premium residential and mixed-use space construction, shaping community structures across dynamic metropolitan zones.",
-  },
-  {
-    icon: "/fura/icons/shuffle-01.svg",
-    title: "Habitech Construction",
-    description:
-      "Quality architecture implementation and strict engineering excellence focusing on material integrity and ecological alignment.",
-  },
-  {
-    icon: "/fura/icons/home-02.svg",
-    title: "Habitech Property",
-    description:
-      "Corporate commercial brokerage and dynamic transaction advisory, mapping high-yield lease acquisitions for private portfolios.",
-  },
-];
 
 export const FURA_HABITECH_PHILOSOPHY: string[] = [
   "Real asset backed",
