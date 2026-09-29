@@ -3,9 +3,7 @@ import { pageMetadata } from "@/lib/seo";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageSchema } from "@/components/seo/PageSchema";
 import { CompanyHero } from "@/components/companies/CompanyHero";
-import { TrainingCtaSection } from "@/components/companies/TrainingCtaSection";
 import { TrainingExperienceSection } from "@/components/companies/TrainingExperienceSection";
-import { TrainingPartnersSection } from "@/components/companies/TrainingPartnersSection";
 import { TrainingProgramSection } from "@/components/companies/TrainingProgramSection";
 
 /** The training banner's own scrim, shallower than the company default. */
@@ -42,9 +40,7 @@ export default function HabitechTrainingPage() {
         overlayImage={HERO_OVERLAY}
       />
       <TrainingProgramSection />
-      <TrainingCtaSection />
       <TrainingExperienceSection />
-      <TrainingPartnersSection />
     </PageShell>
   );
 }

@@ -26,14 +26,14 @@ const HEADING =
 
 export function VisionSection() {
   return (
-    <Section gap="xl" reveal className="bg-surface">
+    <Section gap="xl-tight" reveal className="bg-surface">
       <div className="flex w-full flex-col items-start gap-6">
         <SplitLines as="h2" text="Our Vision" className={HEADING} />
         <SplitLines text={VISION} className={BODY} startDelay={200} />
       </div>
 
       {/* Copy on the left, imagery on the right, stacking below `lg`. */}
-      <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:gap-16">
+      <div className="flex w-full flex-col items-start gap-6 lg:flex-row lg:gap-16">
         <div className="flex w-full flex-col items-start gap-6 lg:min-w-0 lg:flex-1">
           <SplitLines
             as="h2"
@@ -50,7 +50,7 @@ export function VisionSection() {
           <div className="flex w-full flex-col items-start gap-4">
             <SplitLines
               text="Through this structure, FURA is able to:"
-              className="w-full text-base font-medium text-subtitle lg:text-xl"
+              className="w-full text-xl font-medium text-subtitle"
               startDelay={440}
             />
             <CheckList items={CAPABILITIES} reveal revealDelay={520} />
@@ -61,7 +61,7 @@ export function VisionSection() {
           </Reveal>
         </div>
 
-        <div className="relative h-[280px] w-full overflow-hidden rounded-2xl lg:h-[720px] lg:min-w-0 lg:flex-1">
+        <div className="relative h-[720px] w-full overflow-hidden rounded-2xl lg:min-w-0 lg:flex-1">
           <Image
             src="/fura/images/about-vision.png"
             alt="Fura Habitech residential development in Queensland"

@@ -1,36 +1,41 @@
 import Image from "next/image";
-import { Badge } from "@/components/ui/Badge";
 import type { Strategy } from "@/lib/home-content";
 
 /**
- * Investment-class card used in the "Three strategies" section. The 7px bar
- * across the top edge is a box-shadow rather than a border, so it follows the
- * card's rounded corners the way the Figma frame draws it.
+ * Full-bleed investment-strategy tile used in the "Our Investment Strategies"
+ * section: photo under a diagonal scrim, with the icon, title and description
+ * pinned to the bottom edge.
  */
-export function StrategyCard({ badge, icon, title, description, driver }: Strategy) {
+export function StrategyCard({ image, icon, title, description }: Strategy) {
   return (
-    <article className="group flex flex-1 flex-col items-start gap-6 rounded-2xl border border-border-primary bg-surface p-8 shadow-[0_-7px_0_0_#222325] card-hover hover:-translate-y-1 hover:shadow-[0_-7px_0_0_var(--color-brand-accent),0_12px_24px_-8px_rgba(9,12,20,0.25)] active:-translate-y-1 active:shadow-[0_-7px_0_0_var(--color-brand-accent),0_12px_24px_-8px_rgba(9,12,20,0.25)] touch:shadow-[0_-7px_0_0_#222325,0_12px_24px_-8px_rgba(9,12,20,0.25)]">
-      <div className="flex w-full items-start justify-between">
-        <div className="flex size-16 items-center justify-center rounded-full bg-surface-tile transition-colors duration-300 group-hover:bg-brand-secondary group-active:bg-brand-secondary">
+    <article className="group relative flex h-[434px] w-full shrink-0 flex-col lg:w-auto lg:min-w-0 lg:flex-1 justify-end overflow-hidden rounded-xl card-hover hover:-translate-y-1 hover:shadow-xl active:-translate-y-1 active:shadow-xl touch:shadow-xl">
+      <Image
+        src={image}
+        alt=""
+        fill
+        sizes="(min-width: 1024px) 389px, 100vw"
+        className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 group-active:scale-105"
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(146.2deg, rgba(24, 29, 39, 0) 31.25%, rgba(24, 29, 39, 0.902) 81.25%), linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%)",
+        }}
+      />
+
+      <div className="relative flex w-full flex-col gap-3 bg-black/5 p-5 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-2 group-active:-translate-y-2">
+        <div className="flex size-10 items-center justify-center rounded-full bg-white/20 p-2">
           <Image src={icon} alt="" width={24} height={24} className="size-6" />
         </div>
-        <Badge className="transition-colors duration-300 group-hover:bg-brand-accent group-active:bg-brand-accent">
-          {badge}
-        </Badge>
-      </div>
-
-      <div className="flex w-full flex-col gap-4">
-        <h3 className="text-display-xs font-semibold text-title">{title}</h3>
-        <p className="text-sm text-subtitle">{description}</p>
-      </div>
-
-      <hr className="w-full border-t border-border-secondary" />
-
-      <div className="flex w-full flex-col gap-2 rounded-2xl bg-surface-muted p-6">
-        <p className="text-xs font-semibold text-[#2d2e31]">
-          Primary Value Driver
-        </p>
-        <p className="text-sm font-semibold text-title">{driver}</p>
+        <div className="flex w-full flex-col gap-2">
+          <h3 className="text-display-xs font-medium text-title-inverse">
+            {title}
+          </h3>
+          <p className="max-w-[293px] text-xs text-subtitle-inverse">
+            {description}
+          </p>
+        </div>
       </div>
     </article>
   );

@@ -152,7 +152,7 @@ export function WinghouseGallery({
 
           <div className="flex w-full min-h-0 flex-1 items-center justify-center">
             <div
-              className="relative aspect-[1024/578] max-h-full w-full max-w-[1024px] overflow-hidden rounded-2xl border border-border-primary bg-[#383839]"
+              className="relative aspect-[370/294] max-h-full w-full max-w-[1024px] overflow-hidden rounded-2xl border border-border-primary bg-[#383839] lg:aspect-[1024/578]"
               onClick={(event) => event.stopPropagation()}
             >
               <Image
@@ -161,7 +161,7 @@ export function WinghouseGallery({
                 fill
                 sizes="(min-width: 1024px) 1024px, 100vw"
                 quality={95}
-                className="object-contain"
+                className="object-cover"
               />
             </div>
           </div>

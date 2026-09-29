@@ -19,6 +19,8 @@ type CheckListProps = {
    */
   align?: "start" | "center";
   tone?: "subtitle" | "muted";
+  /** Gap between rows: 16px by default, 24px where a frame spaces them wider. */
+  spacing?: "md" | "lg";
   className?: string;
   /** Stagger the rows in as the list scrolls into view. */
   reveal?: boolean;
@@ -31,12 +33,17 @@ export function CheckList({
   items,
   align = "start",
   tone = "subtitle",
+  spacing = "md",
   className,
   reveal = false,
   revealDelay = 0,
 }: CheckListProps) {
   const centered = align === "center";
-  const listClassName = cn("flex w-full flex-col gap-4", className);
+  const listClassName = cn(
+    "flex w-full flex-col",
+    spacing === "lg" ? "gap-6" : "gap-4",
+    className,
+  );
   const rows = (
     <>
       {items.map((item) => {

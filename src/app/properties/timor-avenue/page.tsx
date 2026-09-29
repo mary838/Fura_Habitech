@@ -31,6 +31,7 @@ export default function TimorAvenuePage() {
         image={TIMOR_AVENUE_1_IMAGE}
         price={TIMOR_AVENUE_1_PRICE}
         specs={TIMOR_AVENUE_1_SPECS}
+        rowHeight="tall"
       />
     </PageShell>
   );

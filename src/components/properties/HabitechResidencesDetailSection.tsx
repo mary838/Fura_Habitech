@@ -10,7 +10,7 @@ import {
 
 export function HabitechResidencesDetailSection() {
   return (
-    <section className="w-full bg-surface px-4 py-8 lg:px-[100px] lg:py-24">
+    <section className="w-full bg-surface px-4 py-8 lg:px-[100px] lg:pt-24 lg:pb-[26px]">
       <div className="mx-auto flex w-full max-w-[1200px] flex-col items-start gap-6 lg:gap-16">
         <nav className="flex w-full items-center gap-0.5 text-base lg:text-xl">
           <Link
@@ -76,7 +76,11 @@ export function HabitechResidencesDetailSection() {
               key={spec.label}
               className="flex min-h-[70px] w-full shrink-0 items-center justify-between gap-3 border-t border-border-primary lg:gap-4 bg-surface-muted p-5"
             >
-              <span className="flex min-w-0 flex-1 items-center gap-3 lg:flex-none">
+              {/*
+                The label only takes what it needs (a long one wraps at
+                165px on mobile) and the value gets the rest of the row.
+              */}
+              <span className="flex max-w-[165px] shrink-0 items-center gap-3 lg:max-w-none">
                 <Image
                   src={spec.icon}
                   alt=""

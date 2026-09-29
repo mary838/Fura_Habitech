@@ -17,7 +17,7 @@ export function ServiceStepRow({
   return (
     <div
       className={cn(
-        "flex w-full flex-col gap-6 lg:h-[423px] lg:items-center lg:gap-16",
+        "flex w-full flex-col gap-6 lg:h-[350px] lg:items-center lg:gap-16",
         reversed ? "lg:flex-row-reverse" : "lg:flex-row",
       )}
     >
@@ -40,7 +40,7 @@ export function ServiceStepRow({
         from={reversed ? "left" : "right"}
         className="lg:flex lg:min-w-0 lg:flex-1 lg:flex-col lg:justify-center"
       >
-        <div className="relative h-[423px] w-full overflow-hidden rounded-2xl">
+        <div className="relative h-[423px] w-full overflow-hidden rounded-2xl lg:h-[350px]">
           <Image
             src={image}
             alt={title}

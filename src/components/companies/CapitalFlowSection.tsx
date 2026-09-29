@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SplitLines } from "@/components/ui/SplitLines";
 
 type ReviewItem = {
@@ -39,12 +38,19 @@ const ROW_STEP = 90;
 export function CapitalFlowSection() {
   return (
     <section className="w-full bg-surface px-4 py-8 lg:px-[100px] lg:py-24">
-      <Reveal className="mx-auto flex w-full max-w-[1200px] flex-col gap-8">
-        <SectionHeading
-          gap="xs"
-          title="Move from overview to investment review"
-          description="Request the complete due-diligence pack and assess the opportunity with professional advisers."
-        />
+      <Reveal className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 lg:gap-8">
+        <div className="flex w-full flex-col gap-4">
+          <SplitLines
+            as="h2"
+            text="Move from overview to Investment"
+            className="w-full text-display-xs font-medium text-[#0a0a0c] lg:text-display-md"
+          />
+          <SplitLines
+            text="Request the complete due-diligence pack and assess the opportunity with professional advisers."
+            className="w-full text-base text-[#555964]"
+            startDelay={200}
+          />
+        </div>
 
         <dl className="flex w-full flex-col border-b border-border-secondary">
           {REVIEW_ITEMS.map((item, index) => {
@@ -52,19 +58,19 @@ export function CapitalFlowSection() {
             return (
               <div
                 key={item.num}
-                className="flex w-full flex-col gap-2 border-t border-border-secondary px-4 py-4 -mx-4 transition-colors duration-150 ease-out hover:bg-surface-muted lg:flex-row lg:items-center lg:gap-4 lg:py-6 active:bg-surface-muted"
+                className="flex w-full flex-col gap-4 border-t border-border-secondary px-4 py-3 -mx-4 transition-colors duration-150 ease-out hover:bg-surface-muted lg:flex-row lg:items-center lg:gap-4 lg:py-[30px] active:bg-surface-muted"
               >
                 <SplitLines
                   as="div"
                   text={item.num}
-                  className="w-8 shrink-0 text-base font-medium text-title"
+                  className="w-12 shrink-0 text-xl font-medium text-role lg:w-auto lg:text-lg lg:font-semibold"
                   startDelay={base}
                 />
                 <dt className="lg:w-[405px] lg:shrink-0">
                   <SplitLines
                     as="div"
                     text={item.title}
-                    className="text-base font-medium text-title"
+                    className="text-base font-medium text-[#0a0a0c] lg:text-lg lg:font-semibold"
                     startDelay={base + 60}
                   />
                 </dt>
@@ -82,11 +88,11 @@ export function CapitalFlowSection() {
         </dl>
 
         <div className="flex w-full flex-col flex-wrap items-start gap-6 rounded-lg bg-utility-gray-900 px-6 py-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-col items-start justify-center gap-2">
+          <div className="flex flex-col items-start justify-center gap-2 lg:flex-row lg:items-center lg:gap-8">
             <p className="text-base font-medium whitespace-nowrap text-brand-secondary">
               NEXT STEP
             </p>
-            <p className="text-xl text-title-inverse lg:w-[752px]">
+            <p className="text-xl text-title-inverse">
               Arrange a confidential briefing with FURA Habitech
             </p>
           </div>

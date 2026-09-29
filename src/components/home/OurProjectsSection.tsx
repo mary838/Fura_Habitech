@@ -1,43 +1,41 @@
 import { Button } from "@/components/ui/Button";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { RevealGroup } from "@/components/ui/RevealGroup";
 import { SplitLines } from "@/components/ui/SplitLines";
-import { ProjectCard } from "@/components/ui/ProjectCard";
-import { Section } from "@/components/ui/Section";
-import { PROJECTS } from "@/lib/home-content";
+import { ProjectSlider } from "@/components/home/ProjectSlider";
 
+/**
+ * The header sits in the 1200px container; the three project cards slide
+ * edge to edge beneath it.
+ *
+ * The header is a grid so one set of elements serves both frames: stacked
+ * title → description → button on mobile, and from `lg` the title and button
+ * share a 640px column with the description alongside.
+ */
 export function OurProjectsSection() {
   return (
-    <Section gap="xl" className="bg-surface">
-      {/* Title stack caps at 640px; the description runs the full width flush beneath it. */}
-      <div className="flex w-full flex-col items-start">
-        <Reveal from="left" className="flex flex-col gap-4 lg:w-[640px]">
-          <Eyebrow>OUR WORK</Eyebrow>
-          <SplitLines
-            as="h2"
-            text="Our Projects"
-            className="text-display-xs font-medium text-title lg:text-display-md"
-          />
-        </Reveal>
-        <Reveal from="left" className="w-full">
+    <section className="flex w-full flex-col items-center gap-8 overflow-hidden bg-surface py-8 lg:gap-16 lg:py-24">
+      <div className="grid w-full max-w-[1200px] grid-cols-1 items-start justify-items-start gap-4 px-4 lg:box-content lg:grid-cols-[640px_minmax(0,1fr)] lg:gap-x-0 lg:px-[100px]">
+        <SplitLines
+          as="h2"
+          text="Our Projects"
+          className="text-display-xs font-medium text-title lg:col-start-1 lg:row-start-1 lg:text-display-md"
+        />
+        <Reveal
+          from="right"
+          className="lg:col-start-2 lg:row-span-2 lg:row-start-1"
+        >
           <p className="text-base text-subtitle lg:text-xl">
             Discover how Fura Habitech transforms Australian real assets. From
             high-yield landbanking initiatives to community-first residential
             developments.
           </p>
         </Reveal>
+        <Reveal from="left" className="lg:col-start-1 lg:row-start-2">
+          <Button href="/properties">See all projects</Button>
+        </Reveal>
       </div>
 
-      <RevealGroup className="flex w-full flex-col items-stretch gap-4 lg:flex-row lg:items-start lg:gap-6">
-        {PROJECTS.map((project) => (
-          <ProjectCard key={project.title} {...project} />
-        ))}
-      </RevealGroup>
-
-      <div className="flex w-full items-start justify-center">
-        <Button href="/properties">Check our Real Estate Properties</Button>
-      </div>
-    </Section>
+      <ProjectSlider />
+    </section>
   );
 }

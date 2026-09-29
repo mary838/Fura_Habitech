@@ -22,6 +22,7 @@ export function ConstructionProjectCard({
           alt={title}
           fill
           sizes="100vw"
+          quality={95}
           className="object-cover lg:hidden"
         />
         <Image
@@ -29,12 +30,13 @@ export function ConstructionProjectCard({
           alt={title}
           fill
           sizes="1200px"
+          quality={95}
           className="hidden object-cover lg:block"
         />
       </div>
 
       <div className="flex w-full flex-col items-start gap-3 px-6 pb-8">
-        <p className="text-sm font-medium text-tag">{category}</p>
+        <p className="text-sm text-tag">{category}</p>
         <div className="flex w-full flex-col items-start gap-3">
           <h3 className="w-full text-display-xs font-semibold text-title">
             {title}

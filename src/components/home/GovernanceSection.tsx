@@ -28,12 +28,12 @@ export function GovernanceSection() {
             return (
               <div
                 key={item.num}
-                className="flex w-full flex-col gap-4 border-t border-border-secondary py-3 lg:flex-row lg:items-center lg:gap-4 lg:py-6"
+                className="flex w-full flex-col gap-4 border-t border-border-secondary py-4 lg:flex-row lg:items-center lg:gap-4 lg:py-6"
               >
                 <SplitLines
                   as="div"
                   text={item.num}
-                  className="w-12 shrink-0 text-display-xs font-medium text-title lg:text-xl"
+                  className="w-12 shrink-0 text-lg font-semibold text-[#dc6803]"
                   startDelay={base}
                 />
                 {/* 260px at every width — it is what wraps row 02 onto two lines. */}
@@ -41,7 +41,7 @@ export function GovernanceSection() {
                   <SplitLines
                     as="div"
                     text={item.title}
-                    className="text-xl font-medium text-[#0a0a0c]"
+                    className="text-lg font-semibold text-[#0a0a0c]"
                     startDelay={base + 60}
                   />
                 </dt>

@@ -4,8 +4,8 @@ import { PARTNERS } from "@/lib/home-content";
 
 /**
  * The partners run as one right-to-left ribbon at every width — the mobile
- * frame clips the same single row rather than stacking a grid. Cells narrow
- * from 226.667px to 179px below `lg`.
+ * frame clips the same single row rather than stacking a grid. Cells are
+ * 226.667px wide at every width.
  */
 export function PartnerRibbon() {
   return (
@@ -19,7 +19,7 @@ export function PartnerRibbon() {
           <PartnerCell
             key={partner.name}
             {...partner}
-            className="w-[179px] lg:w-[226.667px]"
+            className="w-[226.667px]"
           />
         ))}
       </Marquee>

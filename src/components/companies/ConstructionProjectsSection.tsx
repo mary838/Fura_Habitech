@@ -9,7 +9,7 @@ export function ConstructionProjectsSection() {
     <Section className="bg-surface-muted" gap="md">
       <SectionHeading align="center" title="Selected Construction Projects" />
 
-      <RevealGroup className="flex w-full flex-col items-start gap-8">
+      <RevealGroup className="flex w-full flex-col items-start gap-6 lg:gap-8">
         {CONSTRUCTION_PROJECTS.map((project) => (
           <ConstructionProjectCard key={project.title} {...project} />
         ))}

@@ -27,7 +27,7 @@ export const MANUFACTURING_STEPS: ServiceStep[] = [
     title: "Design & Planning",
     description:
       "We start with a deep understanding of your needs and site conditions. Our team delivers requirement planning, concept design, detailed design, and seamless implementation coordination tailored to your project goals.",
-    image: "/fura/companies/manufacturing/step-01.png",
+    image: "/fura/companies/manufacturing/step-01-design.png",
   },
   {
     number: "02",
@@ -146,7 +146,7 @@ export const CONSTRUCTION_PROJECTS: ConstructionProject[] = [
       "Open Build Pty Ltd contributed to the AUD 152.4M 200 cent road Melbourne, providing an integrated oncology facility equipped with research labs, clinical imaging, trials centre and wellness spaces. Completed in 2024, it stands as a major cancer treatment and research hub in Victoria.",
   },
   {
-    image: "/fura/companies/construction/p3-high-street.png",
+    image: "/fura/companies/construction/p3-high-street-hd.jpg",
     mobileImage: "/fura/companies/construction/p3-high-street-mobile.jpg",
     category: "STUDENT ACCOMMODATION",
     title: "High Street",
@@ -162,7 +162,7 @@ export const CONSTRUCTION_PROJECTS: ConstructionProject[] = [
       "Open Build Pty Ltd delivered the early works for Private Hospital , including demolition of three buildings, basement retention and heritage façade protection. These works supported the AUD 183M hospital redevelopment and reached Practical Completion in late 2022.",
   },
   {
-    image: "/fura/companies/construction/p5-gold-central.png",
+    image: "/fura/companies/construction/p5-gold-central-hd.jpg",
     mobileImage: "/fura/companies/construction/p5-gold-central-mobile.jpg",
     category: "STUDENT ACCOMMODATION",
     title: "Gold Central City",
@@ -170,7 +170,7 @@ export const CONSTRUCTION_PROJECTS: ConstructionProject[] = [
       "Open Build Pty Ltd worked on the AUD 53M 17-storey student accommodation tower built through the centre of the heritage-listed Gold Central City, delivering 362 beds, a biophilic façade and 5 Star Green Star performance. Completed in 2022.",
   },
   {
-    image: "/fura/companies/construction/p6-office-hq.png",
+    image: "/fura/companies/construction/p6-office-hq-hd.jpg",
     mobileImage: "/fura/companies/construction/p6-office-hq-mobile.jpg",
     category: "COMMERCIAL",
     title: "Office Headquarters",
@@ -178,7 +178,7 @@ export const CONSTRUCTION_PROJECTS: ConstructionProject[] = [
       "Open Build Pty Ltd contributed to the AUD 50M Office Headquarters, a nine-level commercial building with retail, 10,152sqm office NLA, two basement levels and EOT facilities. The project achieved 5 Star Green Star and NABERS ratings, completing in 2021.",
   },
   {
-    image: "/fura/companies/construction/p7-state-school.png",
+    image: "/fura/companies/construction/p7-state-school-hd.jpg",
     mobileImage: "/fura/companies/construction/p7-state-school-mobile.jpg",
     category: "EDUCATION",
     title: "State School New Learning Centre",
@@ -186,7 +186,7 @@ export const CONSTRUCTION_PROJECTS: ConstructionProject[] = [
       "Open Build Pty Ltd delivered the State School New Learning Centre in Brisbane, completed in two stages within an operational school. Works included refurbishing A Block and constructing a new two-storey Public building with eight classrooms, breakout spaces, an undercroft and a tennis court, linked via a new walkway. Heritage features were preserved and strict access controls were implemented to ensure campus safety.",
   },
   {
-    image: "/fura/companies/construction/p8-east-primary.png",
+    image: "/fura/companies/construction/p8-east-primary-hd.jpg",
     mobileImage: "/fura/companies/construction/p8-east-primary-mobile.jpg",
     category: "EDUCATION",
     title: "East Primary School",
@@ -217,13 +217,13 @@ export type BuildingSystem = {
 
 export const BUILDING_SYSTEMS: BuildingSystem[] = [
   {
-    image: "/fura/companies/development/sys-alc-panel.png",
+    image: "/fura/companies/development/system-alc-panel.png",
     title: "ALC Panel System",
     description:
       "ALC panels provide a lightweight and efficient wall system designed for faster installation, improved thermal performance, acoustic comfort and fire resistance. Their prefabricated nature helps reduce on-site work while supporting more efficient and sustainable construction.",
   },
   {
-    image: "/fura/companies/development/sys-cold-steel.png",
+    image: "/fura/companies/development/system-cold-formed-steel.png",
     title: "Cold Formed Steel",
     description:
       "Cold formed steel provides a lightweight, recyclable structural system designed for accuracy, prefabrication and efficient assembly. Its strength, thermal performance and seismic resilience make it suitable for flexible, high-performance building solutions.",
@@ -237,44 +237,37 @@ export const BUILDING_SYSTEMS: BuildingSystem[] = [
 ];
 
 export type SustainabilityPillar = {
-  icon: string;
   title: string;
   description: string;
 };
 
 export const SUSTAINABILITY_PILLARS: SustainabilityPillar[] = [
   {
-    icon: "/fura/icons/leaf.svg",
     title: "Sustainable by Design",
     description:
       "We consider sustainability from the earliest stages of planning — balancing architectural quality, functionality, energy performance and long-term environmental impact.",
   },
   {
-    icon: "/fura/icons/home-leaf.svg",
     title: "Energy-Efficient Living",
     description:
       "Smart design strategies, natural light, ventilation, insulation and efficient systems help reduce energy use and create healthier, more comfortable homes.",
   },
   {
-    icon: "/fura/icons/home-leaf-2.svg",
     title: "Responsible Materials",
     description:
       "We prioritise durable, low-impact and responsibly sourced materials where appropriate—reducing environmental impact while maintaining quality and performance.",
   },
   {
-    icon: "/fura/icons/sun-home.svg",
     title: "Climate-Smart Design",
     description:
       "We prioritise durable, low-impact and responsibly sourced materials where appropriate—reducing environmental impact while maintaining quality and performance.",
   },
   {
-    icon: "/fura/icons/build-tools.svg",
     title: "Smarter Construction",
     description:
       "Through integrated design, manufacturing and construction processes, we explore efficient building methods that can reduce material waste and improve consistency.",
   },
   {
-    icon: "/fura/icons/clock-refresh.svg",
     title: "Designed for the Long Term",
     description:
       "Sustainability is also about longevity. We design adaptable, resilient places that can continue to serve residents and communities well into the future.",
@@ -302,42 +295,109 @@ export const PROPERTY_STATS: StatTile[] = [
   },
 ];
 
-export type IconCard = {
-  icon: string;
+/** A bullet whose lead-in is set in semibold on the title colour. */
+export type LabelledPoint = { label: string; text: string };
+
+/** One consultancy row: heading, copy blocks in order, and its photo. */
+export type ConsultancyService = {
   title: string;
-  description: string;
+  image: string;
+  /** Tighter 16px rhythm, or the 24px the Real Estate Management row uses. */
+  gap: "md" | "lg";
+  /** Photo height: 502px, or 494px for the last row. */
+  imageHeight: 502 | 494;
+  blocks: (
+    | { kind: "paragraph"; text: string }
+    | { kind: "points"; items: LabelledPoint[] }
+    | { kind: "list"; items: string[] }
+  )[];
 };
 
-export const PROPERTY_SERVICES: IconCard[] = [
+export const PROPERTY_CONSULTANCY: ConsultancyService[] = [
   {
-    icon: "/fura/icons/eye.svg",
-    title: "Asset Management",
-    description:
-      "Portfolio oversight, performance monitoring and value enhancement.",
+    title: "Development Services",
+    image: "/fura/companies/property/development-services.png",
+    gap: "md",
+    imageHeight: 502,
+    blocks: [
+      {
+        kind: "points",
+        items: [
+          {
+            label: "Development Management:",
+            text: "Coordinating consultants, approvals, budgets, timelines, and construction delivery.",
+          },
+          {
+            label: "Project Management:",
+            text: "Managing procurement, design coordination, contractors, quality control, and project reporting.",
+          },
+          {
+            label: "Feasibility & Strategy:",
+            text: "Assessing opportunities, risks, market demand, and potential returns before investment decisions are made.",
+          },
+        ],
+      },
+      {
+        kind: "paragraph",
+        text: "We bring structure, expertise, and accountability to every development project.",
+      },
+    ],
   },
   {
-    icon: "/fura/icons/users-02.svg",
-    title: "Property Management",
-    description: "Day-to-day management, maintenance and tenant coordination.",
+    title: "Property Advisory",
+    image: "/fura/companies/property/property-advisory.png",
+    gap: "md",
+    imageHeight: 502,
+    blocks: [
+      {
+        kind: "paragraph",
+        text: "Our property advisory services help you identify opportunities, reduce risk, and make informed investment decisions.",
+      },
+      {
+        kind: "paragraph",
+        text: "We support clients across the full property lifecycle, including acquisition, development, repositioning, and asset optimisation.",
+      },
+      { kind: "paragraph", text: "Whether you are looking to:" },
+      {
+        kind: "list",
+        items: ["Invest", "Develop", "Lease", "Sell", "Optimise an existing asset"],
+      },
+    ],
   },
   {
-    icon: "/fura/icons/home-02.svg",
-    title: "Leasing & Sales",
-    description: "Leasing, sales coordination and market positioning.",
-  },
-  {
-    icon: "/fura/icons/tool-02.svg",
-    title: "Operations",
-    description: "Building operations, facilities and service coordination.",
-  },
-  {
-    icon: "/fura/icons/file-06.svg",
-    title: "Development Management",
-    description:
-      "Coordination of development, refurbishment and repositioning projects.",
+    title: "Real Estate Management",
+    image: "/fura/companies/property/real-estate-management.png",
+    gap: "lg",
+    imageHeight: 494,
+    blocks: [
+      {
+        kind: "paragraph",
+        text: "We provide reliable, end-to-end management for residential, commercial, and mixed-use properties.",
+      },
+      {
+        kind: "points",
+        items: [
+          {
+            label: "Property Management:",
+            text: "Daily operations, tenant relationships, maintenance, compliance, and reporting.",
+          },
+          {
+            label: "Leasing & Sales:",
+            text: "Marketing strategies, tenant placement, negotiations, and transaction support.",
+          },
+          {
+            label: "Asset Advisory:",
+            text: "Practical recommendations to improve performance, strengthen value, and support long-term returns.",
+          },
+        ],
+      },
+      {
+        kind: "paragraph",
+        text: "With experienced local knowledge and a hands-on approach, we help your property perform at its best.",
+      },
+    ],
   },
 ];
-
 
 export type TimelineStep = {
   number: string;

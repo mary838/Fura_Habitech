@@ -1,69 +1,72 @@
 /** Content for the Fura Habitech home page sections. */
 
 export type Strategy = {
-  badge: string;
+  image: string;
   icon: string;
   title: string;
   description: string;
-  driver: string;
 };
 
 export const STRATEGIES: Strategy[] = [
   {
-    badge: "Class A",
-    icon: "/fura/icons/feat-marker.svg",
+    image: "/fura/images/project-mt-gravatt.png",
+    icon: "/fura/icons/marker-pin-01-white.svg",
     title: "Landbank and DA uplift",
     description:
       "Acquire strategic land and seek value uplift through planning, rezoning or approvals.",
-    driver: "Land and approval uplift",
   },
   {
-    badge: "Class B",
-    icon: "/fura/icons/home-02.svg",
+    image: "/fura/images/strategy-build-to-sell.png",
+    icon: "/fura/icons/home-02-white.svg",
     title: "Build-to-Sell",
     description:
       "Deliver residential projects and realise development margin through sale.",
-    driver: "Development and sale margin",
   },
   {
-    badge: "Class C",
-    icon: "/fura/icons/building-03.svg",
+    image: "/fura/images/project-wing-house.png",
+    icon: "/fura/icons/building-07-white.svg",
     title: "Build-to-Rent",
     description:
       "Hold completed housing for rental income and longer-term asset growth.",
-    driver: "Recurring rental income",
   },
 ];
 
 export type Project = {
   image: string;
-  category: string;
-  detail: string;
+  /** Used as the image's alt text; the cards themselves carry no caption. */
   title: string;
-  meta: string;
 };
 
+/** The "Our Projects" row, in the order the frame lays the cards out. */
 export const PROJECTS: Project[] = [
+  { image: "/fura/images/project-mt-gravatt.png", title: "Mt Gravatt–Capalaba" },
+  { image: "/fura/images/project-woolloongabba.png", title: "Woolloongabba" },
+  { image: "/fura/properties/listings/timor-avenue-1.png", title: "Timor Avenue" },
+  { image: "/fura/properties/listings/timor-avenue-2.png", title: "Timor Avenue 2" },
+  { image: "/fura/properties/listings/timor-avenue-3.png", title: "Timor Avenue 3" },
+  { image: "/fura/properties/listings/winghouse-s-photo.png", title: "Winghouse S" },
+  { image: "/fura/properties/listings/winghouse-m-photo.png", title: "Winghouse M" },
   {
-    image: "/fura/images/project-mt-gravatt.png",
-    category: "Built-to-Sell",
-    detail: "Project & townhouses)",
-    title: "Mt Gravatt–Capalaba",
-    meta: "39 units / “153”",
+    image: "/fura/properties/listings/fura-living-kelvyngroove.png",
+    title: "Fura Living, Kelvyngroove Village",
+  },
+  { image: "/fura/properties/listings/the-lakes.png", title: "The Lakes" },
+  { image: "/fura/properties/completed/central-street-20.png", title: "20 Central Street" },
+  { image: "/fura/properties/completed/cent-road-200.png", title: "200 Cent Road" },
+  { image: "/fura/properties/completed/high-street.png", title: "High Street" },
+  { image: "/fura/properties/completed/private-hospital.png", title: "Private Hospital" },
+  { image: "/fura/properties/completed/gold-central-city.png", title: "Gold Central City" },
+  {
+    image: "/fura/properties/completed/office-headquarters.png",
+    title: "Office Headquarters",
   },
   {
-    image: "/fura/images/project-woolloongabba.png",
-    category: "Landbank & DA Uplift",
-    detail: "Brisbane",
-    title: "Woolloongabba",
-    meta: "10,336 sqm",
+    image: "/fura/properties/completed/state-school.png",
+    title: "State School New Learning Centre",
   },
   {
-    image: "/fura/images/project-wing-house.png",
-    category: "Build-to-Rent",
-    detail: "Secondary dwelling,",
-    title: "Wing House (Medium)",
-    meta: "Open for landlords",
+    image: "/fura/properties/completed/east-primary-school.png",
+    title: "East Primary School",
   },
 ];
 
@@ -76,32 +79,32 @@ export type PortfolioCompany = {
 export const PORTFOLIO_COMPANIES: PortfolioCompany[] = [
   {
     image: "/fura/images/portfolio-manufacturing.png",
-    title: "Habitech Manufacturing",
+    title: "Habitech Manufacturing Pty Ltd",
     href: "/companies/habitech-manufacturing",
   },
   {
     image: "/fura/images/portfolio-construction.png",
-    title: "Habitech Construction",
+    title: "Habitech Construction Pty Ltd",
     href: "/companies/habitech-construction",
   },
   {
     image: "/fura/images/portfolio-Development.png",
-    title: "Habitech Development",
+    title: "Habitech Development Pty Ltd",
     href: "/companies/habitech-development",
   },
   {
     image: "/fura/images/portfolio-Property.png",
-    title: "Habitech Property",
+    title: "Habitech Real Estate Property Pty Ltd",
     href: "/companies/habitech-property",
   },
   {
     image: "/fura/images/portfolio-training.png",
-    title: "Habitech Training",
+    title: "Habitech Training Program",
     href: "/companies/habitech-training",
   },
   {
     image: "/fura/images/portfolio-fura-habitech.png",
-    title: "Fura Habitech",
+    title: "FURA Habitech pty ltd",
     href: "/companies/fura-habitech",
   },
 ];

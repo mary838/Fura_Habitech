@@ -14,7 +14,7 @@ import {
 export function TrainingExperienceSection() {
   return (
     <Section gap="lg" className="bg-surface">
-      <div className="flex w-full flex-col items-center justify-between gap-4 lg:flex-row lg:gap-8">
+      <div className="flex w-full flex-col items-center justify-between gap-4 lg:flex-row lg:items-stretch lg:gap-8">
         <Reveal
           from="left"
           className="flex w-full flex-col items-start gap-6 lg:w-[520px] lg:shrink-0"
@@ -29,7 +29,12 @@ export function TrainingExperienceSection() {
             ))}
           </div>
 
-          <CheckList items={TRAINING_CAPABILITIES} reveal revealDelay={120} />
+          <CheckList
+            items={TRAINING_CAPABILITIES}
+            spacing="lg"
+            reveal
+            revealDelay={120}
+          />
         </Reveal>
 
         <Reveal from="right" className="w-full lg:w-[640px] lg:shrink-0">
@@ -37,7 +42,7 @@ export function TrainingExperienceSection() {
             src="/fura/companies/training/mou.jpg"
             alt="FURA Australia and the National University of Singapore, Chongqing Institute, signing the MoU"
             sizes="(min-width: 1024px) 640px, 100vw"
-            className="h-[400px] lg:h-[480px]"
+            className="h-[644px]"
           />
         </Reveal>
       </div>

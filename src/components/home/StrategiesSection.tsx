@@ -11,16 +11,16 @@ export function StrategiesSection() {
       <div className="flex w-full flex-col items-start gap-4 lg:items-center lg:gap-8">
         <SectionHeading
           align="center-lg"
-          title="Three strategies capture value at different stages"
+          title="Our Investment Strategies"
           description="Investors select a class; each class is governed by its applicable offer documents."
           descriptionSize="base"
         />
         <Button href="/properties">Check Our Investment Projects</Button>
       </div>
 
-      <RevealGroup className="flex w-full flex-col items-stretch gap-6 lg:flex-row lg:items-start">
+      <RevealGroup className="flex w-full flex-col items-stretch gap-4 lg:flex-row lg:items-start">
         {STRATEGIES.map((strategy) => (
-          <StrategyCard key={strategy.badge} {...strategy} />
+          <StrategyCard key={strategy.title} {...strategy} />
         ))}
       </RevealGroup>
     </Section>
