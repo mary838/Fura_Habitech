@@ -3,15 +3,15 @@ import type { TrainingCourse } from "@/lib/training-content";
 
 /**
  * One module of the training programme: stage pill, title, lead line, body
- * copy and its tag pills, with a square still to the right.
+ * copy and its tag pills, with a photo filling the right half of the card.
  *
- * The still is desktop-only — the mobile frame drops it and lets the copy run
+ * The photo is desktop-only — the mobile frame drops it and lets the copy run
  * the full width of the card.
  */
 export function TrainingCourseCard({ course }: { course: TrainingCourse }) {
   return (
-    <article className="flex w-full items-center gap-[52px] overflow-hidden rounded-2xl border border-border-primary bg-surface p-8 lg:min-h-[348px]">
-      <div className="flex min-w-0 flex-1 flex-col items-start gap-4">
+    <article className="flex w-full items-stretch gap-[52px] overflow-hidden rounded-2xl border border-border-primary bg-surface p-8 lg:min-h-[406px]">
+      <div className="flex min-w-0 flex-1 flex-col items-start justify-center gap-4">
         <span className="rounded-full bg-[rgba(237,223,203,0.5)] px-2 py-1 text-sm font-medium text-role">
           {course.code}
         </span>
@@ -51,12 +51,12 @@ export function TrainingCourseCard({ course }: { course: TrainingCourse }) {
         </ul>
       </div>
 
-      <div className="relative hidden size-[200px] shrink-0 overflow-hidden rounded-xl bg-white lg:block">
+      <div className="relative hidden min-w-0 flex-1 overflow-hidden rounded-xl bg-white lg:block">
         <Image
           src={course.image}
           alt=""
           fill
-          sizes="200px"
+          sizes="536px"
           quality={75}
           className="object-cover"
         />

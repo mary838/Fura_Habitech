@@ -22,7 +22,7 @@ export function PartnerCell({
             src={logo}
             alt={name}
             fill
-            sizes="(min-width: 1024px) 227px, 176px"
+            sizes="227px"
             className={`object-contain ${logoClassName ?? ""}`}
           />
         </div>

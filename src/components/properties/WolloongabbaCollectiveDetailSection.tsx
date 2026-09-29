@@ -30,7 +30,7 @@ export function WolloongabbaCollectiveDetailSection() {
             The Wolloongabba Collective
           </span>
         </nav>
-    
+
         <div className="order-1 w-full lg:order-2">
           <WolloongabbaGallery
             images={WOLLOONGABBA_COLLECTIVE_GALLERY}
@@ -62,11 +62,15 @@ export function WolloongabbaCollectiveDetailSection() {
           </div>
         </Reveal>
 
-        <div className="order-3 flex w-full flex-col items-start overflow-hidden rounded-xl border border-border-primary">
-          <div className="flex min-h-[70px] w-full shrink-0 items-center bg-surface-muted p-5">
-            <p className="text-xl font-medium text-title">Properties Detail</p>
-          </div>
-          {/*
+        {/* The table and the brochure button sit 32px apart in both frames. */}
+        <div className="order-3 flex w-full flex-col gap-8">
+          <div className="flex w-full flex-col items-start overflow-hidden rounded-xl border border-border-primary">
+            <div className="flex min-h-[70px] w-full shrink-0 items-center bg-surface-muted p-5">
+              <p className="text-xl font-medium text-title">
+                Properties Detail
+              </p>
+            </div>
+            {/*
             Label left, value right at every width. 70px is the row's minimum
             rather than a fixed height: on a phone the long values wrap onto
             two lines and the row grows with them, as the 402px frame draws
@@ -76,43 +80,48 @@ export function WolloongabbaCollectiveDetailSection() {
             Keyed by index: the frame uses "Investment Strategy" for two
             separate rows, so the label is not unique.
           */}
-          {WOLLOONGABBA_COLLECTIVE_SPECS.map((spec, index) => (
-            <div
-              key={index}
-              className="flex min-h-[70px] w-full shrink-0 items-center justify-between gap-3 border-t border-border-primary lg:gap-4 bg-surface-muted p-5"
-            >
-              <span className="flex min-w-0 flex-1 items-center gap-3 lg:flex-none">
-                <Image
-                  src={spec.icon}
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="size-5 shrink-0"
-                />
-                <span className="min-w-0 text-sm font-medium text-subtitle">
-                  {spec.label}
+            {WOLLOONGABBA_COLLECTIVE_SPECS.map((spec, index) => (
+              <div
+                key={index}
+                className="flex min-h-[70px] w-full shrink-0 items-center justify-between gap-3 border-t border-border-primary lg:gap-4 bg-surface-muted p-5"
+              >
+                {/*
+                The label only takes what it needs (a long one wraps at
+                165px on mobile) and the value gets the rest of the row.
+              */}
+                <span className="flex max-w-[165px] shrink-0 items-center gap-3 lg:max-w-none">
+                  <Image
+                    src={spec.icon}
+                    alt=""
+                    width={20}
+                    height={20}
+                    className="size-5 shrink-0"
+                  />
+                  <span className="min-w-0 text-sm font-medium text-subtitle">
+                    {spec.label}
+                  </span>
                 </span>
-              </span>
-              <span className="min-w-0 flex-1 text-right text-base font-semibold text-title">
-                {spec.value}
-              </span>
-            </div>
-          ))}
-        </div>
+                <span className="min-w-0 flex-1 text-right text-base font-semibold text-title">
+                  {spec.value}
+                </span>
+              </div>
+            ))}
+          </div>
 
-        <a
-          href="#contact-form"
-          className="order-4 flex w-full items-center justify-center gap-1.5 overflow-hidden rounded-full border border-utility-gray-900 bg-surface px-[18px] py-3 text-base font-semibold text-subtitle transition-colors hover:bg-surface-muted active:bg-surface-muted"
-        >
-          <Image
-            src="/fura/icons/download-cloud-02.svg"
-            alt=""
-            width={20}
-            height={20}
-            className="size-5"
-          />
-          Download Project Brochure
-        </a>
+          <a
+            href="#contact-form"
+            className="flex w-full items-center justify-center gap-1.5 overflow-hidden rounded-full border border-utility-gray-900 bg-surface px-[18px] py-3 text-base font-semibold text-subtitle transition-colors hover:bg-surface-muted active:bg-surface-muted"
+          >
+            <Image
+              src="/fura/icons/download-cloud-02.svg"
+              alt=""
+              width={20}
+              height={20}
+              className="size-5"
+            />
+            Download Project Brochure
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -26,7 +26,7 @@ export default function FuraHabitechPage() {
       />
       <CompanyHero
         image="/fura/companies/fura-habitech/hero.png"
-        title="FURA Habitech Pty Ltd"
+        title="FURA Habitech pty ltd"
         subtitle="Global Real Asset Investment Platform – for Housing Solutions in Australia"
         ctaLabel="Partner With Us"
         ctaHref="#contact-form"

@@ -20,44 +20,10 @@ export const ORGANIGRAM_SUBSIDIARIES: OrganigramEntry[] = [
 ];
 
 /**
- * A run of copy inside a checklist row. The design bolds the substantive part
- * of each "About fura group" bullet, so a row is a sequence of runs rather
- * than a single string.
+ * A run of copy inside a checklist row, for rows that bold part of their text,
+ * so a row is a sequence of runs rather than a single string.
  */
 export type RichSegment = { text: string; bold?: boolean };
-
-export const GROUP_HIGHLIGHTS: RichSegment[][] = [
-  [
-    { text: "Singapore-headquartered " },
-    {
-      text: "investment group focused on real estate, infrastructure, agriculture, hospitality and industry",
-      bold: true,
-    },
-    { text: "." },
-  ],
-  [
-    { text: "Presence across " },
-    { text: "Singapore, Australia, Cambodia, Japan and the USA", bold: true },
-    { text: "." },
-  ],
-  [
-    { text: "15+ years of experience ", bold: true },
-    { text: "in fund management and international investment structuring." },
-  ],
-  [
-    { text: "Real asset portfolio exceeding " },
-    {
-      text: "USD 750 million, covering more than 250 hectares",
-      bold: true,
-    },
-    { text: " of developed land." },
-  ],
-  [
-    { text: "Hospitality fund assets valued at over " },
-    { text: "USD 250 million", bold: true },
-    { text: "." },
-  ],
-];
 
 export const CAPABILITIES: string[] = [
   "Create value through land acquisition and DA uplift",
@@ -75,7 +41,10 @@ export type Statistic = {
 
 /** Rendered as a centred pair above a three-up row, as in the design. */
 export const STATISTICS_PRIMARY: Statistic[] = [
-  { value: "+15 years experience in Fund Management" },
+  {
+    value: "+15 years experience in Fund Management",
+    label: "Operating in Australia under AFSL License",
+  },
   {
     value: "AUD +500 million GDV",
     label: "Construction project delivered in Australia",

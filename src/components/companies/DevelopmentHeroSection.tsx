@@ -9,12 +9,15 @@ import { HeroBackdrop } from "@/components/ui/HeroBackdrop";
  */
 export function DevelopmentHeroSection() {
   return (
-    <section className="relative flex h-[500px] w-full items-center overflow-hidden bg-surface-muted px-4 py-8 lg:px-[100px] lg:py-24">
+    // The frame is 1440x500 in Figma. Past that width a fixed 500px band would
+    // make `object-cover` crop the building away, so — as in `CompanyHero` —
+    // the band keeps the design's 2.88:1 ratio, capped for ultrawide screens.
+    <section className="relative flex h-[500px] w-full items-center overflow-hidden bg-surface-muted px-4 py-8 min-[1440px]:h-[34.72vw] min-[1440px]:max-h-[680px] lg:px-[100px] lg:py-24">
       <HeroBackdrop src="/fura/companies/development/hero-bg.png" />
 
       <div className="hero-rise relative flex w-full max-w-[500px] flex-col items-start gap-6">
         <div className="flex w-full flex-col gap-3">
-          <h1 className="text-display-xs font-medium text-title lg:text-display-md">
+          <h1 className="text-display-md font-medium text-title">
             Habitech Development Pty Ltd
           </h1>
           <p className="text-display-xs font-medium text-subtitle lg:w-[396px]">

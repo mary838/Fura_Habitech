@@ -99,9 +99,10 @@ export function WinghouseDetailSection({
             {specs.map((spec) => (
               <div
                 key={spec.label}
-                className="flex min-h-[70px] w-full shrink-0 items-center justify-between gap-3 border-t border-border-primary bg-surface-muted p-5 lg:min-h-[66px] lg:gap-4"
+                className="flex min-h-[70px] w-full shrink-0 items-center justify-between gap-1 border-t border-border-primary bg-surface-muted p-5 lg:min-h-[66px] lg:gap-4"
               >
-                <span className="flex min-w-0 flex-1 items-center gap-3 lg:flex-none">
+                {/* The label keeps its line; the value takes what is left. */}
+                <span className="flex max-w-[65%] shrink-0 items-center gap-3">
                   <Image
                     src={spec.icon}
                     alt=""

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { RevealGroup } from "@/components/ui/RevealGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -35,20 +34,12 @@ export function TrainingProgramSection() {
           {TRAINING_STAGES.map((stage, index) => (
             <div
               key={stage.code}
-              className={`flex flex-col items-center gap-3 px-6 py-8 lg:flex-1 ${
+              className={`flex flex-col items-center gap-3 px-6 py-8 lg:min-w-0 lg:flex-1 lg:gap-4 ${
                 index < TRAINING_STAGES.length - 1
                   ? "border-b border-border-primary lg:border-b-0 lg:border-r"
                   : ""
               }`}
             >
-              <Image
-                src={stage.icon}
-                alt=""
-                width={100}
-                height={75}
-                quality={75}
-                className="h-[75px] w-[100px] object-contain"
-              />
               <p className="text-base font-semibold text-title">{stage.code}</p>
               <p className="w-full text-center text-sm font-medium text-title">
                 {stage.summary}

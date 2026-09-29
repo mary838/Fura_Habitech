@@ -6,7 +6,7 @@ import { SUSTAINABILITY_PILLARS } from "@/lib/companies-content";
 export function EnvironmentalSection() {
   return (
     <section className="w-full bg-surface px-4 py-8 lg:px-[100px] lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-6 lg:gap-10">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-6 lg:gap-16">
         <SectionHeading
           align="center"
           title="Building Better, Living Greener"
@@ -14,11 +14,11 @@ export function EnvironmentalSection() {
           descriptionSize="base"
         />
 
-        <RevealGroup className="grid w-full grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-6">
+        <RevealGroup className="grid w-full grid-cols-1 gap-6 lg:grid-cols-3">
           {SUSTAINABILITY_PILLARS.map((pillar) => (
             <article
               key={pillar.title}
-              className="group relative flex flex-col items-start gap-6 overflow-hidden rounded-2xl border border-border-primary bg-surface p-6 card-hover hover:-translate-y-1 hover:shadow-lg active:-translate-y-1 active:shadow-lg touch:shadow-lg"
+              className="relative flex min-h-[312px] flex-col justify-end overflow-hidden rounded-2xl border border-border-primary bg-surface p-6 card-hover hover:-translate-y-1 hover:shadow-lg active:-translate-y-1 active:shadow-lg touch:shadow-lg"
             >
               {/* Washed-out photo the frame lays behind every pillar card. */}
               <Image
@@ -30,16 +30,7 @@ export function EnvironmentalSection() {
                 className="pointer-events-none object-cover"
               />
 
-              <div className="relative flex size-16 shrink-0 items-center justify-center rounded-full bg-[#eaf0eb] transition-colors duration-200 ease-out group-hover:bg-brand-secondary group-active:bg-brand-secondary">
-                <Image
-                  src={pillar.icon}
-                  alt=""
-                  width={40}
-                  height={40}
-                  className="size-10"
-                />
-              </div>
-
+              {/* The copy sits at the foot of the 312px card. */}
               <div className="relative flex w-full flex-col gap-4">
                 <h3 className="text-display-xs font-semibold text-title">
                   {pillar.title}

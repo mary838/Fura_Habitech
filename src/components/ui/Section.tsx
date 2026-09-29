@@ -4,13 +4,15 @@ import { Reveal } from "@/components/ui/Reveal";
 type SectionProps = {
   children: React.ReactNode;
   /** Vertical rhythm between the section's direct children. */
-  gap?: "none" | "md" | "lg" | "xl" | "xl-tight";
+  gap?: "none" | "md" | "lg" | "xl" | "xl-tight" | "2xl";
   className?: string;
   /** Extra classes on the inner 1200px container, e.g. alignment. */
   containerClassName?: string;
   id?: string;
   /** Fade the container up as it scrolls into view. */
   reveal?: boolean;
+  /** `"tight"` drops the mobile vertical padding from 32px to 24px. */
+  padding?: "default" | "tight";
 };
 
 /**
@@ -24,12 +26,17 @@ export function Section({
   containerClassName,
   id,
   reveal = false,
+  padding = "default",
 }: SectionProps) {
   const Container = reveal ? Reveal : "div";
   return (
     <section
       id={id}
-      className={cn("w-full px-4 py-8 lg:px-[100px] lg:py-24", className)}
+      className={cn(
+        "w-full px-4 lg:px-[100px] lg:py-24",
+        padding === "tight" ? "py-6" : "py-8",
+        className,
+      )}
     >
       <Container
         className={cn(
@@ -38,6 +45,7 @@ export function Section({
           gap === "md" && "gap-6 lg:gap-12",
           gap === "xl" && "gap-8 lg:gap-16",
           gap === "xl-tight" && "gap-6 lg:gap-16",
+          gap === "2xl" && "gap-16",
           containerClassName,
         )}
       >

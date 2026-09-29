@@ -41,11 +41,11 @@ export function FuraLivingGallery({ images, alt }: FuraLivingGalleryProps) {
 
   return (
     <>
-      <div className="flex w-full gap-3 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] lg:h-[552px] lg:overflow-visible [&::-webkit-scrollbar]:hidden">
+      <div className="flex w-full gap-3 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] lg:h-[552px] lg:gap-4 lg:overflow-visible [&::-webkit-scrollbar]:hidden">
         <button
           type="button"
           onClick={() => setOpenIndex(0)}
-          className="relative h-[135px] w-[206px] shrink-0 overflow-hidden rounded-xl lg:h-full lg:w-[670px]"
+          className="relative h-[135px] w-[206px] shrink-0 overflow-hidden rounded-xl lg:h-full lg:w-[670px] lg:rounded-lg"
         >
           <Image
             src={main}
@@ -68,27 +68,33 @@ export function FuraLivingGallery({ images, alt }: FuraLivingGalleryProps) {
           </button>
         ))}
 
+        {/*
+          `sizes` is the width each photo is drawn at once `object-cover` has
+          filled its tile, not the tile's own width: the 251x270 cells hold
+          photos far wider than they are, so hinting the cell width made Next
+          serve a file the cover then had to upscale.
+        */}
         <div className="hidden lg:grid lg:h-full lg:flex-1 lg:grid-cols-2 lg:grid-rows-2 lg:gap-3">
           <button
             type="button"
             onClick={() => setOpenIndex(1)}
             className="relative hidden overflow-hidden rounded-lg lg:block lg:h-full lg:w-full"
           >
-            <Image src={topLeft} alt="" fill sizes="253px" quality={95} className="object-cover" />
+            <Image src={topLeft} alt="" fill sizes="690px" quality={95} className="object-cover" />
           </button>
           <button
             type="button"
             onClick={() => setOpenIndex(2)}
             className="relative hidden overflow-hidden rounded-lg lg:block lg:h-full lg:w-full"
           >
-            <Image src={topRight} alt="" fill sizes="253px" quality={95} className="object-cover" />
+            <Image src={topRight} alt="" fill sizes="410px" quality={95} className="object-cover" />
           </button>
           <button
             type="button"
             onClick={() => setOpenIndex(3)}
             className="relative col-span-2 hidden overflow-hidden rounded-lg lg:block lg:h-full lg:w-full"
           >
-            <Image src={bottomWide} alt="" fill sizes="514px" quality={95} className="object-cover" />
+            <Image src={bottomWide} alt="" fill sizes="640px" quality={95} className="object-cover" />
           </button>
         </div>
       </div>

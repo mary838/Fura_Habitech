@@ -21,7 +21,7 @@ export function ManufacturingSitesSection() {
             src={site}
             alt={`Manufacturing site ${index + 1}`}
             sizes="(min-width: 1024px) 592px, 100vw"
-            className="h-[423px]"
+            className="h-[423px] lg:h-[283px]"
             overlay="bg-black/10"
           />
         ))}

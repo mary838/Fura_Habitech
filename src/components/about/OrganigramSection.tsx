@@ -17,7 +17,7 @@ const CONNECTOR = "bg-placeholder";
 export function OrganigramSection() {
   return (
     <section className="w-full bg-surface-muted px-4 py-8 lg:px-[100px] lg:py-24">
-      <div className="flex w-full flex-col gap-12">
+      <div className="flex w-full flex-col gap-6 lg:gap-12">
         <SectionHeading
           align="center"
           title="A Global and Connected Real Asset Platform"

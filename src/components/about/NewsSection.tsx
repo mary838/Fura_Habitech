@@ -6,7 +6,7 @@ import { NEWS_ITEMS } from "@/lib/about-content";
 
 export function NewsSection() {
   return (
-    <Section gap="xl" reveal className="bg-surface">
+    <Section gap="xl-tight" reveal className="bg-surface">
       <SectionHeading
         gap="sm"
         title="News & Events"

@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CompanyHero } from "@/components/companies/CompanyHero";
-import { CompletedProjectsStrip } from "@/components/properties/CompletedProjectsStrip";
 import { FilterPill } from "@/components/ui/FilterPill";
 import { RevealGroup } from "@/components/ui/RevealGroup";
 import {
@@ -12,7 +11,62 @@ import {
   PROPERTY_LISTINGS,
   PROPERTY_TABS,
 } from "@/lib/properties-content";
-import type { PropertyListing } from "@/lib/properties-content";
+import type { FeaturedProperty, PropertyListing } from "@/lib/properties-content";
+
+/**
+ * Completed project tile. Read-only — there is no detail page behind these;
+ * the full write-up lives on the relevant company page — so the card shows a
+ * one-line title and the opening of the description in a fixed 180px panel,
+ * as the frame does.
+ */
+function CompletedCard({
+  property,
+  index = 0,
+}: {
+  property: FeaturedProperty;
+  index?: number;
+}) {
+  return (
+    <article
+      style={{ "--card-delay": `${(index % 6) * 80}ms` } as React.CSSProperties}
+      className="group flex w-full flex-col items-start gap-3 overflow-hidden rounded-2xl border border-border-primary bg-surface p-3 card-fade-in card-hover hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-12px_rgba(9,12,20,0.28)] active:-translate-y-1.5 active:shadow-[0_18px_40px_-12px_rgba(9,12,20,0.28)] touch:shadow-[0_18px_40px_-12px_rgba(9,12,20,0.28)]"
+    >
+      <div className="relative h-[280px] w-full shrink-0 overflow-hidden rounded-xl">
+        <Image
+          src={property.image}
+          alt={property.title}
+          fill
+          sizes="(min-width: 1024px) 384px, 100vw"
+          className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 group-active:scale-105"
+        />
+        <span className="absolute top-4 right-4 rounded-md bg-surface px-3 py-1.5 text-sm font-medium text-title">
+          {property.status}
+        </span>
+      </div>
+
+      <div className="flex h-[180px] w-full flex-col gap-2 rounded-xl bg-surface-muted p-4">
+        <div className="flex w-full items-start gap-2">
+          <h3
+            title={property.title}
+            className="min-w-0 flex-1 truncate text-display-xs font-semibold text-title"
+          >
+            {property.title}
+          </h3>
+          <Image
+            src="/fura/icons/arrow-up-right-muted.svg"
+            alt=""
+            width={24}
+            height={24}
+            className="mt-0.5 size-6 shrink-0"
+          />
+        </div>
+        <p className="line-clamp-3 w-full text-lg text-subtitle">
+          {property.description}
+        </p>
+      </div>
+    </article>
+  );
+}
 
 function ListingCard({
   property,
@@ -48,17 +102,16 @@ function ListingCard({
       */}
       <div className="flex w-full flex-1 flex-col gap-4 rounded-xl bg-surface-muted p-4">
         <div className="flex w-full flex-col gap-2">
-          {/*
-            Titles wrap instead of truncating, and the row reserves both lines
-            either way, so a one-line name still lines its rule and specs up
-            with a two-line one across the row.
-          */}
-          <div className="flex min-h-16 w-full items-start gap-2">
-            <h3 className="min-w-0 flex-1 text-display-xs font-semibold text-title">
+          {/* One line, as in the frame; a longer name ends in an ellipsis. */}
+          <div className="flex w-full items-start gap-2">
+            <h3
+              title={property.title}
+              className="min-w-0 flex-1 truncate text-display-xs font-semibold text-title"
+            >
               {property.title}
             </h3>
             <Image
-              src="/fura/icons/arrow-up-right.svg"
+              src="/fura/icons/arrow-up-right-muted.svg"
               alt=""
               width={24}
               height={24}
@@ -148,6 +201,8 @@ export function PropertiesListSection() {
         subtitle="Global Real Asset Investment Platform – for Housing Solutions in Australia"
         ctaLabel="Partner With Us"
         ctaHref="#contact-form"
+        align="center"
+        copyWidth="wide"
       />
 
       <section className="w-full bg-surface px-4 py-8 lg:px-[100px] lg:py-24">
@@ -209,17 +264,37 @@ export function PropertiesListSection() {
             ) : null}
           </div>
 
-          {activeTab !== 1 ? (
-            <div className="flex w-full flex-col items-center gap-6">
-              <h2 className="w-full text-center text-display-xs font-medium tracking-[-0.72px] text-title lg:text-display-md">
-                Our Complete Projects Portfolio
-              </h2>
-
-              <CompletedProjectsStrip properties={FEATURED_PROPERTIES} />
-            </div>
-          ) : null}
         </div>
       </section>
+
+      {activeTab !== 1 ? (
+        <section className="w-full bg-surface px-4 py-8 lg:px-[100px] lg:py-24">
+          <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-6 lg:gap-16">
+            <h2 className="w-full text-center text-display-md font-medium text-title">
+              Our Complete Projects Portfolio
+            </h2>
+
+            {/*
+              Keyed on the tab, like the listing grid, so the cards replay
+              their entrance on every switch — coming back from "On going"
+              mounts this section already in view, where the scroll reveal
+              alone has nothing to animate from.
+            */}
+            <RevealGroup
+              key={activeTab}
+              className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              {FEATURED_PROPERTIES.map((property, index) => (
+                <CompletedCard
+                  key={property.title}
+                  property={property}
+                  index={index}
+                />
+              ))}
+            </RevealGroup>
+          </div>
+        </section>
+      ) : null}
     </>
   );
 }

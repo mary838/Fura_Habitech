@@ -4,7 +4,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { PageSchema } from "@/components/seo/PageSchema";
 import { CompanyHero } from "@/components/companies/CompanyHero";
 import { PropertyServicesSection } from "@/components/companies/PropertyServicesSection";
-import { OurProjectsSection } from "@/components/home/OurProjectsSection";
+import { PropertyConsultancySection } from "@/components/companies/PropertyConsultancySection";
 
 export const metadata: Metadata = pageMetadata({
   title: "Habitech Real Estate Property",
@@ -25,14 +25,15 @@ export default function HabitechPropertyPage() {
       <CompanyHero
         image="/fura/companies/property/hero.png"
         title="Habitech Real Estate Property Pty Ltd"
-        subtitle="Integrated Construction Solutions"
-        tagline="Crafting Excellence, Building Success"
+        subtitle="Real Estate Management"
+        tagline="Integrated asset, property and operational management."
         ctaLabel="Partner With Us"
         ctaHref="#contact-form"
+        overlayImage="linear-gradient(250.9deg, rgba(255, 255, 255, 0) 2.998%, rgba(19, 19, 19, 0.4) 56.888%)"
+        overlayImageMobile="linear-gradient(264.5deg, rgba(255, 255, 255, 0) 2.998%, rgba(19, 19, 19, 0.4) 56.888%)"
       />
       <PropertyServicesSection />
-      {/* Same frame as the home page's, cards and CTA included. */}
-      <OurProjectsSection />
+      <PropertyConsultancySection />
     </PageShell>
   );
 }

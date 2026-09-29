@@ -7,6 +7,11 @@ type TimorAvenueDetailSectionProps = {
   image: string;
   price: string;
   specs: { icon: string; label: string; value: string }[];
+  /**
+   * Row height, per frame: `"tall"` is 77px, `"compact"` 66px at every
+   * width, and the default 66px on desktop / 70px on mobile.
+   */
+  rowHeight?: "default" | "tall" | "compact";
 };
 
 /**
@@ -18,7 +23,14 @@ export function TimorAvenueDetailSection({
   image,
   price,
   specs,
+  rowHeight = "default",
 }: TimorAvenueDetailSectionProps) {
+  const rowClass =
+    rowHeight === "tall"
+      ? "min-h-[77px]"
+      : rowHeight === "compact"
+        ? "min-h-[66px]"
+        : "min-h-[70px] lg:min-h-[66px]";
   return (
     <section className="w-full bg-surface px-4 py-8 lg:px-[100px] lg:py-24">
       <div className="mx-auto flex w-full max-w-[1200px] flex-col items-start gap-6 lg:gap-16">
@@ -37,14 +49,14 @@ export function TimorAvenueDetailSection({
             className="size-4 shrink-0"
           />
           <span className="min-w-0 flex-1 truncate font-normal text-brand-primary lg:flex-none">
-            Timor Avenue
+            Timor avenue
           </span>
         </nav>
 
         <div className="order-1 relative h-[202px] w-full shrink-0 overflow-hidden rounded-2xl lg:order-2 lg:h-[553px]">
           <Image
             src={image}
-            alt="Timor Avenue"
+            alt="Timor avenue"
             fill
             priority
             sizes="(min-width: 1024px) 1200px, 100vw"
@@ -56,7 +68,7 @@ export function TimorAvenueDetailSection({
           <div className="order-2 flex w-full flex-col items-start gap-3 lg:order-1 lg:w-[800px] lg:gap-3">
             <SplitLines
               as="h1"
-              text="Timor Avenue"
+              text="Timor avenue"
               className="w-full text-display-xs font-medium text-title lg:text-display-md"
             />
             <SplitLines
@@ -82,11 +94,11 @@ export function TimorAvenueDetailSection({
         */}
         <div className="order-3 flex w-full flex-col items-start gap-8">
           <div className="flex w-full flex-col items-start overflow-hidden rounded-xl border border-border-primary">
-            <div className="flex min-h-[70px] w-full shrink-0 items-center bg-surface-muted p-5 lg:min-h-[66px]">
+            <div className={`flex w-full shrink-0 items-center bg-surface-muted p-5 ${rowClass}`}>
               <p className="text-xl font-medium text-title">Properties Detail</p>
             </div>
             {/*
-              Label left, value right at every width. 70px is the row's
+              Label left, value right at every width. The row height is a
               minimum rather than a fixed height: on a phone the longer
               values wrap onto a second line and the row grows with them.
               Nothing here may be `nowrap` — the table clips its overflow,
@@ -95,9 +107,10 @@ export function TimorAvenueDetailSection({
             {specs.map((spec) => (
               <div
                 key={spec.label}
-                className="flex min-h-[70px] w-full shrink-0 items-center justify-between gap-3 border-t border-border-primary bg-surface-muted p-5 lg:min-h-[66px] lg:gap-4"
+                className={`flex w-full shrink-0 items-center justify-between gap-3 border-t border-border-primary bg-surface-muted p-5 lg:gap-4 ${rowClass}`}
               >
-                <span className="flex min-w-0 flex-1 items-center gap-3 lg:flex-none">
+                {/* The label keeps its line; the value takes what is left. */}
+                <span className="flex max-w-[65%] shrink-0 items-center gap-3">
                   <Image
                     src={spec.icon}
                     alt=""

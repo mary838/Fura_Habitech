@@ -87,7 +87,7 @@ export const PROPERTY_LISTINGS: PropertyListing[] = [
     href: "/properties/timor-avenue-3",
   },
   {
-    image: "/fura/properties/listings/winghouse-s.png",
+    image: "/fura/properties/listings/winghouse-s-photo.png",
     status: "On going",
     title: "Winghouse S",
     price: "150k AUD",
@@ -100,7 +100,7 @@ export const PROPERTY_LISTINGS: PropertyListing[] = [
     href: "/properties/winghouse-s",
   },
   {
-    image: "/fura/properties/listings/winghouse-m.png",
+    image: "/fura/properties/listings/winghouse-m-photo.png",
     status: "On going",
     title: "Winghouse M",
     price: "$170k",
@@ -113,7 +113,7 @@ export const PROPERTY_LISTINGS: PropertyListing[] = [
     href: "/properties/winghouse-m",
   },
   {
-    image: "/fura/properties/listings/winghouse-l.png",
+    image: "/fura/properties/listings/winghouse-l-photo.png",
     status: "On going",
     title: "Winghouse L",
     price: "$190k",
@@ -163,56 +163,56 @@ export type FeaturedProperty = {
 /** The taller 640px cards in "Our Complete Projects Portfolio". */
 export const FEATURED_PROPERTIES: FeaturedProperty[] = [
   {
-    image: "/fura/properties/listings/central-street-20.png",
+    image: "/fura/properties/completed/central-street-20.png",
     status: "Completed",
     title: "20 Central Street",
     description:
       "Open Build Pty Ltd contributed to the 20 Central Street Student Accommodation, a AUD 109M development comprising three towers of 11, 20 and 24 storeys with 464 rooms. Located in Melbourne's CBD, the project provides modern, high-density student living with excellent access to public transport and city amenities.",
   },
   {
-    image: "/fura/properties/listings/cent-road-200.png",
+    image: "/fura/properties/completed/cent-road-200.png",
     status: "Completed",
     title: "200 Cent Road",
     description:
       "Open Build Pty Ltd contributed to the AUD 152.4M 200 Cent Road Melbourne, providing an integrated oncology facility equipped with research labs, clinical imaging, trials centre and wellness spaces. Completed in 2024, it stands as a major cancer treatment and research hub in Victoria.",
   },
   {
-    image: "/fura/properties/listings/high-street.png",
+    image: "/fura/properties/completed/high-street.png",
     status: "Completed",
     title: "High Street",
     description:
       "Open Build Pty Ltd worked on the AUD 60M, 29-storey student accommodation tower at High Street featuring 374 beds, communal spaces, gym, and outdoor courtyards. Built on a constrained 470sqm site in Melbourne CBD, the project reached Practical Completion in August 2023.",
   },
   {
-    image: "/fura/companies/construction/p4-private-hospital.png",
+    image: "/fura/properties/completed/private-hospital.png",
     status: "Completed",
     title: "Private Hospital",
     description:
       "Open Build Pty Ltd delivered the early works for Private Hospital, including demolition of three buildings, basement retention and heritage façade protection. These works supported the AUD 183M hospital redevelopment and reached Practical Completion in late 2022.",
   },
   {
-    image: "/fura/companies/construction/p5-gold-central.png",
+    image: "/fura/properties/completed/gold-central-city.png",
     status: "Completed",
     title: "Gold Central City",
     description:
       "Open Build Pty Ltd worked on the AUD 53M 17-storey student accommodation tower built through the centre of the heritage-listed Gold Central City, delivering 362 beds, a biophilic façade and 5 Star Green Star performance. Completed in 2022.",
   },
   {
-    image: "/fura/companies/construction/p6-office-hq.png",
+    image: "/fura/properties/completed/office-headquarters.png",
     status: "Completed",
     title: "Office Headquarters",
     description:
       "Open Build Pty Ltd contributed to the AUD 50M Office Headquarters, a nine-level commercial building with retail, 10,152sqm office NLA, two basement levels and EOT facilities. The project achieved 5 Star Green Star and NABERS ratings, completing in 2021.",
   },
   {
-    image: "/fura/companies/construction/p7-state-school.png",
+    image: "/fura/properties/completed/state-school.png",
     status: "Completed",
     title: "State School New Learning Centre",
     description:
       "Open Build Pty Ltd delivered the State School New Learning Centre in Brisbane, completed in two stages within an operational school. Works included refurbishing A Block and constructing a new two-storey Public building with eight classrooms, breakout spaces, an undercroft and a tennis court, linked via a new walkway. Heritage features were preserved and strict access controls were implemented to ensure campus safety.",
   },
   {
-    image: "/fura/companies/construction/p8-east-primary.png",
+    image: "/fura/properties/completed/east-primary-school.png",
     status: "Completed",
     title: "East Primary School",
     description:
@@ -409,27 +409,14 @@ export const TIMOR_AVENUE_1_SPECS: {
   label: string;
   value: string;
 }[] = [
-  {
-    icon: "/fura/icons/home-02.svg",
-    label: "Project Status",
-    value: "property 2013 sqm",
-  },
+  { icon: "/fura/icons/home-02.svg", label: "Project Status", value: "DA Uplift" },
   { icon: "/fura/icons/building-03.svg", label: "Unit:", value: "10 units" },
-  { icon: "/fura/icons/expand-03.svg", label: "Size:", value: "2,013 m²" },
-  {
-    icon: "/fura/icons/home-03.svg",
-    label: "House Configuration",
-    value: "3 Floors",
-  },
+  { icon: "/fura/icons/expand-03.svg", label: "Land Size", value: "2,013 m²" },
+  { icon: "/fura/icons/home-03.svg", label: "Unit Size", value: "4 BR, 180 sqm" },
   {
     icon: "/fura/icons/tag-02.svg",
     label: "One unit Purchasing Price",
     value: "AUD 900,000",
-  },
-  {
-    icon: "/fura/icons/map-02.svg",
-    label: "House 3 floors approx",
-    value: "200 sqm",
   },
 ];
 
@@ -476,10 +463,10 @@ export const TIMOR_AVENUE_3_SPECS: {
   {
     icon: "/fura/icons/home-02.svg",
     label: "Project Status",
-    value: "property 794 sqm",
+    value: "DA Uplift",
   },
   { icon: "/fura/icons/building-03.svg", label: "Unit:", value: "3 units" },
-  { icon: "/fura/icons/expand-03.svg", label: "Size:", value: "794 m²" },
+  { icon: "/fura/icons/expand-03.svg", label: "Land Size", value: "794 m²" },
   {
     icon: "/fura/icons/home-03.svg",
     label: "House Configuration",
@@ -492,17 +479,19 @@ export const TIMOR_AVENUE_3_SPECS: {
   },
   {
     icon: "/fura/icons/map-02.svg",
-    label: "House 3 floors approx",
-    value: "200 sqm",
+    label: "Unit size",
+    value: "180 sqm",
   },
 ];
 
+/** The six photos, in the order the frames show them. */
 export const WINGHOUSE_S_GALLERY = [
-  "/fura/properties/listings/winghouse-s.png",
+  "/fura/properties/listings/winghouse-s-photo.png",
   "/fura/properties/winghouse-s/p2.png",
   "/fura/properties/winghouse-s/p3.png",
   "/fura/properties/winghouse-s/p4.png",
   "/fura/properties/winghouse-s/p5.png",
+  "/fura/properties/winghouse-s/p6.png",
 ];
 
 export const WINGHOUSE_S_PRICE = "150k";
@@ -548,7 +537,7 @@ export const WINGHOUSE_S_DETAIL_SPECS: {
  * does not use — hence its own file rather than the shared listings/ image.
  */
 export const WINGHOUSE_M_GALLERY = [
-  "/fura/properties/winghouse-m/p1.png",
+  "/fura/properties/listings/winghouse-m-photo.png",
   "/fura/properties/winghouse-m/p2.png",
   "/fura/properties/winghouse-m/p3.png",
   "/fura/properties/winghouse-m/p4.png",
@@ -602,7 +591,7 @@ export const WINGHOUSE_M_DETAIL_SPECS: {
  * The first five are also the collage tiles on the detail page.
  */
 export const WINGHOUSE_L_GALLERY = [
-  "/fura/properties/listings/winghouse-l.png",
+  "/fura/properties/listings/winghouse-l-photo.png",
   "/fura/properties/winghouse-l/p2.png",
   "/fura/properties/winghouse-l/p3.png",
   "/fura/properties/winghouse-l/p4.png",
@@ -648,7 +637,7 @@ export const FURA_LIVING_KELVYNGROOVE_GALLERY = [
   "/fura/properties/listings/fura-living-kelvyngroove.png",
   "/fura/properties/fura-living-kelvyngroove/p3.png",
   "/fura/properties/fura-living-kelvyngroove/p5.png",
-  "/fura/properties/fura-living-kelvyngroove/p6.png",
+  "/fura/properties/fura-living-kelvyngroove/p6-lot-3.png",
   "/fura/properties/fura-living-kelvyngroove/p2.png",
   "/fura/properties/fura-living-kelvyngroove/p4.png",
 ];

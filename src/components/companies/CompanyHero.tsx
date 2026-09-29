@@ -12,16 +12,24 @@ type CompanyHeroProps = {
   ctaHref: string;
   /** Raw `background-image` for the scrim, where a frame sets its own. */
   overlayImage?: string;
+  /** Scrim below `lg`, for a frame whose mobile gradient differs. */
+  overlayImageMobile?: string;
   /**
    * Where the copy sits in the 500px band. Company frames bottom-align it from
    * `lg`; every frame centres it while the band is only 16px-gutter wide.
    */
   align?: "end" | "center";
+  /** `"wide"` gives the copy the 663px column a longer company name needs. */
+  copyWidth?: "default" | "wide";
 };
 
 /** The scrim the company pages share. */
 const DEFAULT_OVERLAY =
   "linear-gradient(258.9deg, rgba(0, 0, 0, 0.33) 43.087%, rgba(0, 0, 0, 0.68) 81.538%)";
+
+/** The same scrim at the steeper angle the mobile frames draw it. */
+const DEFAULT_OVERLAY_MOBILE =
+  "linear-gradient(266.9deg, rgba(0, 0, 0, 0.33) 43.087%, rgba(0, 0, 0, 0.68) 81.538%)";
 
 /** Full-bleed banner at the top of a company page. */
 export function CompanyHero({
@@ -32,7 +40,11 @@ export function CompanyHero({
   ctaLabel,
   ctaHref,
   overlayImage = DEFAULT_OVERLAY,
+  overlayImageMobile = overlayImage === DEFAULT_OVERLAY
+    ? DEFAULT_OVERLAY_MOBILE
+    : undefined,
   align = "end",
+  copyWidth = "default",
 }: CompanyHeroProps) {
   return (
     <section
@@ -46,9 +58,18 @@ export function CompanyHero({
         align === "center" ? "justify-center" : "justify-center lg:justify-end",
       )}
     >
-      <HeroBackdrop src={image} overlayImage={overlayImage} />
+      <HeroBackdrop
+        src={image}
+        overlayImage={overlayImage}
+        overlayImageMobile={overlayImageMobile}
+      />
 
-      <div className="relative flex w-full max-w-[1200px] flex-col items-start gap-6 lg:w-[633px]">
+      <div
+        className={cn(
+          "relative flex w-full max-w-[1200px] flex-col items-start gap-6",
+          copyWidth === "wide" ? "lg:w-[663px]" : "lg:w-[633px]",
+        )}
+      >
         <div
           className="hero-rise flex w-full flex-col gap-3 font-medium text-title-inverse"
           style={{ animationDelay: "80ms" }}
@@ -58,7 +79,14 @@ export function CompanyHero({
             let the three lines wrap rather than stepping the sizes down.
           */}
           <h1 className="text-display-md">{title}</h1>
-          <p className="text-display-xs lg:w-[396px]">{subtitle}</p>
+          <p
+            className={cn(
+              "text-display-xs",
+              copyWidth === "default" && "lg:w-[396px]",
+            )}
+          >
+            {subtitle}
+          </p>
         </div>
         {tagline ? (
           <p

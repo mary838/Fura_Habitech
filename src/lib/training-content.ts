@@ -6,7 +6,6 @@ export type TrainingStage = {
   /** "01 / LEARN" — the label shared by the strip and the matching course. */
   code: string;
   summary: string;
-  icon: string;
 };
 
 export type TrainingCourse = {
@@ -25,27 +24,22 @@ export const TRAINING_STAGES: TrainingStage[] = [
   {
     code: "01 / LEARN",
     summary: "Technical foundations",
-    icon: "/fura/companies/training/stage-01.png",
   },
   {
     code: "02 / UNDERSTAND",
     summary: "Technical vocabulary & design principles",
-    icon: "/fura/companies/training/stage-02.png",
   },
   {
     code: "03 / COMPLY",
     summary: "Australian standards & requirements",
-    icon: "/fura/companies/training/stage-03.png",
   },
   {
     code: "04 / APPLY",
     summary: "Practical and industry-based training",
-    icon: "/fura/companies/training/stage-04.png",
   },
   {
     code: "05 / DESIGN",
     summary: "Digital tools & engineering applications",
-    icon: "/fura/companies/training/stage-05.png",
   },
 ];
 
@@ -99,7 +93,7 @@ export const TRAINING_COURSES: TrainingCourse[] = [
       ],
     ],
     tags: ["Technical glossary", "Self-assessment", "3D assembly"],
-    image: "/fura/companies/training/course-02.png",
+    image: "/fura/companies/training/course-02-photo.png",
   },
   {
     code: "03 / COMPLY",
@@ -126,7 +120,7 @@ export const TRAINING_COURSES: TrainingCourse[] = [
       ],
     ],
     tags: ["Structural requirements", "Building performance", "Australian framework"],
-    image: "/fura/companies/training/course-03.png",
+    image: "/fura/companies/training/course-03-photo.png",
   },
   {
     code: "04 / APPLY",
@@ -152,7 +146,7 @@ export const TRAINING_COURSES: TrainingCourse[] = [
       ],
     ],
     tags: ["15 Studio Tasks", "7 applications", "Industry workflows"],
-    image: "/fura/companies/training/course-04.png",
+    image: "/fura/companies/training/course-04-photo.png",
   },
   {
     code: "05 / DESIGN",
@@ -178,7 +172,7 @@ export const TRAINING_COURSES: TrainingCourse[] = [
       ],
     ],
     tags: ["3D construction", "Engineering calculations", "Transport planning"],
-    image: "/fura/companies/training/course-05.png",
+    image: "/fura/companies/training/course-05-photo.png",
   },
 ];
 
@@ -194,27 +188,4 @@ export const TRAINING_EXPERIENCE_PARAGRAPHS: readonly string[] = [
   "From Training to Real Projects",
   "A key objective of the initiative is to create a direct connection between training and practical implementation.",
   "Professionals who develop their MMC capabilities through the initiative may have opportunities to apply this knowledge directly through FURA’s Australian development pipeline and future MMC projects, providing practical exposure to the design, planning and delivery of projects using modern construction methods.",
-];
-
-export type TrainingPartner = {
-  name: string;
-  logo: string;
-  /** Intrinsic size, so each mark keeps its own aspect ratio in the row. */
-  width: number;
-  height: number;
-};
-
-export const TRAINING_PARTNERS: TrainingPartner[] = [
-  {
-    name: "National University of Singapore",
-    logo: "/fura/companies/training/partner-nus.png",
-    width: 1390,
-    height: 862,
-  },
-  {
-    name: "Trade & Investment Queensland",
-    logo: "/fura/companies/training/partner-tiq.png",
-    width: 524,
-    height: 243,
-  },
 ];

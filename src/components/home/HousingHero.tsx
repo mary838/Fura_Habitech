@@ -6,7 +6,7 @@ export function HousingHero() {
     <section className="relative flex min-h-[810px] w-full flex-col items-start overflow-hidden pt-20 lg:pt-[88px]">
       <HeroBackdrop
         src="/fura/images/hero.png"
-        overlay="bg-[rgba(91,91,91,0.4)]"
+        overlayImage="linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0.4))"
       />
 
       <div className="relative z-10 flex w-full flex-1 flex-col items-start justify-start px-4 py-8 lg:justify-center lg:px-[100px] lg:pt-20 lg:pb-0">

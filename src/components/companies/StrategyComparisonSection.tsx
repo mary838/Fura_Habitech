@@ -1,8 +1,9 @@
-import Image from "next/image";
-import { Badge } from "@/components/ui/Badge";
+import { RevealGroup } from "@/components/ui/RevealGroup";
 import { ScrollHint } from "@/components/ui/ScrollHint";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { FH_COMPARISON, FH_STRATEGIES } from "@/lib/fura-habitech-content";
+import { StrategyCard } from "@/components/ui/StrategyCard";
+import { FH_COMPARISON } from "@/lib/fura-habitech-content";
+import { STRATEGIES } from "@/lib/home-content";
 
 export function StrategyComparisonSection() {
   return (
@@ -21,49 +22,12 @@ export function StrategyComparisonSection() {
         </SectionHeading>
 
         <div className="flex w-full flex-col items-start gap-8">
-          <div className="flex w-full flex-col items-stretch gap-6 lg:flex-row lg:items-start">
-            {FH_STRATEGIES.map((item) => (
-              <div
-                key={item.badge}
-                className="group flex flex-col items-start gap-6 rounded-2xl border border-border-primary bg-surface p-8 card-hover hover:-translate-y-1 hover:shadow-lg lg:min-w-0 lg:flex-1 lg:self-stretch active:-translate-y-1 active:shadow-lg touch:shadow-lg"
-              >
-                <div className="flex w-full items-start justify-between">
-                  <div className="flex size-16 items-center justify-center rounded-full bg-surface-tile transition-colors duration-300 group-hover:bg-brand-secondary group-active:bg-brand-secondary">
-                    <Image
-                      src={item.icon}
-                      alt=""
-                      width={24}
-                      height={24}
-                      className="size-6"
-                    />
-                  </div>
-                  <Badge className="rounded-lg transition-colors duration-300 group-hover:bg-brand-accent group-active:bg-brand-accent">
-                    {item.badge}
-                  </Badge>
-                </div>
-
-                <div className="flex w-full flex-col gap-4">
-                  <p className="text-display-xs font-semibold text-title">
-                    {item.title}
-                  </p>
-                  <p className="w-full text-sm text-subtitle">
-                    {item.description}
-                  </p>
-                </div>
-
-                <hr className="w-full border-t border-border-secondary" />
-
-                <div className="flex w-full flex-col gap-2">
-                  <p className="text-xs font-semibold text-[#2d2e31]">
-                    Primary Value Driver
-                  </p>
-                  <p className="text-sm font-semibold text-title">
-                    {item.driver}
-                  </p>
-                </div>
-              </div>
+          {/* The same three photo cards the home page shows. */}
+          <RevealGroup className="flex w-full flex-col items-stretch gap-4 lg:flex-row lg:items-start">
+            {STRATEGIES.map((strategy) => (
+              <StrategyCard key={strategy.title} {...strategy} />
             ))}
-          </div>
+          </RevealGroup>
 
           {/*
             The table keeps its 1200px desktop width on mobile in the design, so

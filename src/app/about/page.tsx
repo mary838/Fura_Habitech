@@ -3,7 +3,6 @@ import { pageMetadata } from "@/lib/seo";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageSchema } from "@/components/seo/PageSchema";
 import { CompanyHero } from "@/components/companies/CompanyHero";
-import { AboutIntroSection } from "@/components/about/AboutIntroSection";
 import { KeyStatisticsSection } from "@/components/about/KeyStatisticsSection";
 import { NewsSection } from "@/components/about/NewsSection";
 import { OrganigramSection } from "@/components/about/OrganigramSection";
@@ -29,16 +28,16 @@ export default function AboutPage() {
       />
       <CompanyHero
         image="/fura/images/about-hero.png"
-        title="Habitech Manufacturing Pty Ltd"
+        title="FURA Australia"
         subtitle="Integrated Prefabricated Building Solutions"
         tagline="From precision manufacturing to efficient construction."
         ctaLabel="Explore Our Capabilities"
         ctaHref="#contact-form"
         overlayImage="linear-gradient(257.6deg, rgba(255, 255, 255, 0.35) 22.702%, rgba(0, 0, 0, 0.35) 64.026%)"
+        overlayImageMobile="linear-gradient(266.9deg, rgba(0, 0, 0, 0.297) 43.087%, rgba(0, 0, 0, 0.612) 81.538%)"
         align="center"
       />
       <OrganigramSection />
-      <AboutIntroSection />
       <VisionSection />
       <KeyStatisticsSection />
       <NewsSection />
