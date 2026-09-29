@@ -24,19 +24,37 @@ export function TeamMemberCard({
   name,
   role,
   bio,
+  frame,
   revealDelay = 0,
 }: TeamMemberCardProps) {
   return (
     <article className="flex w-full max-w-[854px] flex-col gap-4 overflow-hidden rounded-2xl border border-border-secondary bg-surface card-hover hover:-translate-y-1 hover:shadow-lg sm:flex-row sm:gap-0 sm:border-0 lg:h-[280px] active:-translate-y-1 active:shadow-lg touch:shadow-lg">
       <div className="w-full shrink-0 sm:w-[308px] sm:p-4">
         <div className="relative h-[320px] w-full overflow-hidden bg-[#c4c4c4] sm:h-full sm:rounded-2xl">
-          <Image
-            src={photo}
-            alt={name}
-            fill
-            sizes="(min-width: 640px) 276px, 100vw"
-            className="object-cover object-top"
-          />
+          {/*
+            Below `lg` the frame's shape follows the card, so the photo simply
+            covers it from the top. From `lg` the frame is a fixed 276x248 and
+            the photo takes the size and offset the design gives it.
+          */}
+          <div
+            className="absolute inset-0 lg:inset-auto lg:top-[var(--frame-top)] lg:left-[var(--frame-left)] lg:h-[var(--frame-height)] lg:w-[var(--frame-width)]"
+            style={
+              {
+                "--frame-width": frame.width,
+                "--frame-height": frame.height,
+                "--frame-left": frame.left,
+                "--frame-top": frame.top,
+              } as React.CSSProperties
+            }
+          >
+            <Image
+              src={photo}
+              alt={name}
+              fill
+              sizes="(min-width: 1024px) 340px, (min-width: 640px) 276px, 100vw"
+              className="object-cover object-top"
+            />
+          </div>
         </div>
       </div>
 
