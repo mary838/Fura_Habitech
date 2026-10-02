@@ -9,7 +9,9 @@ import type { NewsItem } from "@/lib/about-content";
  * The card is the frame's 384 x 470 at every width, narrowing only where a
  * phone is too small to hold 384px beside the 16px gutters. 470px is a
  * minimum, not a fixed height: every card in the row stretches to the tallest
- * one, so the row stays even and a long headline is never clipped.
+ * one, so the row stays even and a long headline is never clipped. The
+ * headline takes the spare height, so every date sits on the card's bottom
+ * edge, level across the row.
  */
 export function NewsCard({ image, titleLead, title, date }: NewsItem) {
   return (
@@ -24,8 +26,8 @@ export function NewsCard({ image, titleLead, title, date }: NewsItem) {
         />
       </div>
 
-      <div className="flex w-full flex-col items-start gap-5 p-6">
-        <h3 className="w-full text-base text-title">
+      <div className="flex w-full flex-1 flex-col items-start gap-5 p-6">
+        <h3 className="w-full flex-1 text-base text-title">
           {titleLead ? <strong className="font-bold">{titleLead}</strong> : null}
           {title}
         </h3>

@@ -47,13 +47,37 @@ export function BuildingSystemsSection() {
                 </Reveal>
 
                 <div className="relative h-[296px] w-full shrink-0 overflow-hidden lg:h-full lg:w-[568px] lg:rounded-xl">
-                  <Image
-                    src={system.image}
-                    alt={system.title}
-                    fill
-                    sizes="(min-width: 1024px) 568px, 100vw"
-                    className="object-cover"
-                  />
+                  {/*
+                    A cropped photo is drawn in the design's box from `lg`,
+                    which pushes its built-in border outside the frame. Below
+                    `lg` the frame's shape changes, so a slight zoom trims the
+                    same edges without stretching the photo.
+                  */}
+                  <div
+                    className={cn(
+                      "absolute inset-0",
+                      system.crop &&
+                        "scale-[1.06] lg:inset-auto lg:top-(--crop-top) lg:left-(--crop-left) lg:h-(--crop-height) lg:w-(--crop-width) lg:scale-100",
+                    )}
+                    style={
+                      system.crop
+                        ? ({
+                            "--crop-top": `${system.crop.top}%`,
+                            "--crop-left": `${system.crop.left}%`,
+                            "--crop-width": `${system.crop.width}%`,
+                            "--crop-height": `${system.crop.height}%`,
+                          } as React.CSSProperties)
+                        : undefined
+                    }
+                  >
+                    <Image
+                      src={system.image}
+                      alt={system.title}
+                      fill
+                      sizes="(min-width: 1024px) 680px, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
               </article>
             );

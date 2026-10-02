@@ -213,18 +213,28 @@ export type BuildingSystem = {
   image: string;
   title: string;
   description: string;
+  /**
+   * The photo's box relative to its 568x392 frame in the design (Figma's fill
+   * crop), in %. Set where the source photo carries a border of its own that
+   * the frame crops away. The ALC photo's frame also runs along its bottom
+   * edge, which Figma leaves in, so its box overhangs the bottom by the same
+   * 2.08% as the top.
+   */
+  crop?: { top: number; left: number; width: number; height: number };
 };
 
 export const BUILDING_SYSTEMS: BuildingSystem[] = [
   {
     image: "/fura/companies/development/system-alc-panel.png",
     title: "ALC Panel System",
+    crop: { top: -2.08, left: -2.36, width: 104.73, height: 104.16 },
     description:
       "ALC panels provide a lightweight and efficient wall system designed for faster installation, improved thermal performance, acoustic comfort and fire resistance. Their prefabricated nature helps reduce on-site work while supporting more efficient and sustainable construction.",
   },
   {
     image: "/fura/companies/development/system-cold-formed-steel.png",
     title: "Cold Formed Steel",
+    crop: { top: -1.59, left: -9.95, width: 119.9, height: 103.67 },
     description:
       "Cold formed steel provides a lightweight, recyclable structural system designed for accuracy, prefabrication and efficient assembly. Its strength, thermal performance and seismic resilience make it suitable for flexible, high-performance building solutions.",
   },

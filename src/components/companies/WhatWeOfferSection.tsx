@@ -13,6 +13,7 @@ export function WhatWeOfferSection() {
         alt: "Planted atrium in a Habitech Development building",
       }}
       cta={{ label: "Partner With Us", href: "#contact-form" }}
+      copyWidth="fixed"
     />
   );
 }

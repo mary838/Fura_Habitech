@@ -67,48 +67,55 @@ export function CompanyHero({
         overlayImageMobile={overlayImageMobile}
       />
 
-      <div
-        className={cn(
-          "relative flex w-full max-w-[1200px] flex-col items-start gap-6",
-          copyWidth === "wide" ? "lg:w-[663px]" : "lg:w-[633px]",
-        )}
-      >
+      {/*
+        The copy column sits at the left of the same centred 1200px container
+        as the sections below, so past 1440px it stays lined up with them
+        rather than hugging the screen edge.
+      */}
+      <div className="relative mx-auto w-full max-w-[1200px]">
         <div
-          className="hero-rise flex w-full flex-col gap-3 font-medium text-title-inverse"
-          style={{ animationDelay: "80ms" }}
+          className={cn(
+            "flex w-full flex-col items-start gap-6",
+            copyWidth === "wide" ? "lg:w-[663px]" : "lg:w-[633px]",
+          )}
         >
-          {/*
-            The banner holds its full type scale at every width — the frames
-            let the three lines wrap rather than stepping the sizes down.
-          */}
-          <h1 className="text-display-md">{title}</h1>
-          <p
-            className={cn(
-              "text-display-xs",
-              copyWidth === "default" && "lg:w-[396px]",
-            )}
+          <div
+            className="hero-rise flex w-full flex-col gap-3 font-medium text-title-inverse"
+            style={{ animationDelay: "80ms" }}
           >
-            {subtitle}
-          </p>
+            {/*
+              The banner holds its full type scale at every width — the frames
+              let the three lines wrap rather than stepping the sizes down.
+            */}
+            <h1 className="text-display-md">{title}</h1>
+            <p
+              className={cn(
+                "text-display-xs",
+                copyWidth === "default" && "lg:w-[396px]",
+              )}
+            >
+              {subtitle}
+            </p>
+          </div>
+          {tagline ? (
+            <p
+              className={cn(
+                "hero-rise w-full text-xl",
+                taglineTone === "title"
+                  ? "text-title-inverse"
+                  : "text-subtitle-inverse",
+              )}
+              style={{ animationDelay: "180ms" }}
+            >
+              {tagline}
+            </p>
+          ) : null}
+          <span className="hero-rise" style={{ animationDelay: "280ms" }}>
+            <Button href={ctaHref} variant="outline" className="border-white">
+              {ctaLabel}
+            </Button>
+          </span>
         </div>
-        {tagline ? (
-          <p
-            className={cn(
-              "hero-rise w-full text-xl",
-              taglineTone === "title"
-                ? "text-title-inverse"
-                : "text-subtitle-inverse",
-            )}
-            style={{ animationDelay: "180ms" }}
-          >
-            {tagline}
-          </p>
-        ) : null}
-        <span className="hero-rise" style={{ animationDelay: "280ms" }}>
-          <Button href={ctaHref} variant="outline" className="border-white">
-            {ctaLabel}
-          </Button>
-        </span>
       </div>
     </section>
   );

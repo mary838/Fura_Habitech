@@ -158,7 +158,12 @@ export type FeaturedProperty = {
   status: PropertyStatus;
   title: string;
   description: string;
+  /** Where the card leads; omitted for projects with no page to open. */
+  href?: string;
 };
+
+/** The construction projects' full write-ups live on the company page. */
+const CONSTRUCTION_PAGE = "/companies/habitech-construction";
 
 /** The taller 640px cards in "Our Complete Projects Portfolio". */
 export const FEATURED_PROPERTIES: FeaturedProperty[] = [
@@ -166,6 +171,7 @@ export const FEATURED_PROPERTIES: FeaturedProperty[] = [
     image: "/fura/properties/completed/central-street-20.png",
     status: "Completed",
     title: "20 Central Street",
+    href: CONSTRUCTION_PAGE,
     description:
       "Open Build Pty Ltd contributed to the 20 Central Street Student Accommodation, a AUD 109M development comprising three towers of 11, 20 and 24 storeys with 464 rooms. Located in Melbourne's CBD, the project provides modern, high-density student living with excellent access to public transport and city amenities.",
   },
@@ -173,6 +179,7 @@ export const FEATURED_PROPERTIES: FeaturedProperty[] = [
     image: "/fura/properties/completed/cent-road-200.png",
     status: "Completed",
     title: "200 Cent Road",
+    href: CONSTRUCTION_PAGE,
     description:
       "Open Build Pty Ltd contributed to the AUD 152.4M 200 Cent Road Melbourne, providing an integrated oncology facility equipped with research labs, clinical imaging, trials centre and wellness spaces. Completed in 2024, it stands as a major cancer treatment and research hub in Victoria.",
   },
@@ -180,6 +187,7 @@ export const FEATURED_PROPERTIES: FeaturedProperty[] = [
     image: "/fura/properties/completed/high-street.png",
     status: "Completed",
     title: "High Street",
+    href: CONSTRUCTION_PAGE,
     description:
       "Open Build Pty Ltd worked on the AUD 60M, 29-storey student accommodation tower at High Street featuring 374 beds, communal spaces, gym, and outdoor courtyards. Built on a constrained 470sqm site in Melbourne CBD, the project reached Practical Completion in August 2023.",
   },
@@ -187,6 +195,7 @@ export const FEATURED_PROPERTIES: FeaturedProperty[] = [
     image: "/fura/properties/completed/private-hospital.png",
     status: "Completed",
     title: "Private Hospital",
+    href: CONSTRUCTION_PAGE,
     description:
       "Open Build Pty Ltd delivered the early works for Private Hospital, including demolition of three buildings, basement retention and heritage façade protection. These works supported the AUD 183M hospital redevelopment and reached Practical Completion in late 2022.",
   },
@@ -194,6 +203,7 @@ export const FEATURED_PROPERTIES: FeaturedProperty[] = [
     image: "/fura/properties/completed/gold-central-city.png",
     status: "Completed",
     title: "Gold Central City",
+    href: CONSTRUCTION_PAGE,
     description:
       "Open Build Pty Ltd worked on the AUD 53M 17-storey student accommodation tower built through the centre of the heritage-listed Gold Central City, delivering 362 beds, a biophilic façade and 5 Star Green Star performance. Completed in 2022.",
   },
@@ -201,6 +211,7 @@ export const FEATURED_PROPERTIES: FeaturedProperty[] = [
     image: "/fura/properties/completed/office-headquarters.png",
     status: "Completed",
     title: "Office Headquarters",
+    href: CONSTRUCTION_PAGE,
     description:
       "Open Build Pty Ltd contributed to the AUD 50M Office Headquarters, a nine-level commercial building with retail, 10,152sqm office NLA, two basement levels and EOT facilities. The project achieved 5 Star Green Star and NABERS ratings, completing in 2021.",
   },
@@ -208,6 +219,7 @@ export const FEATURED_PROPERTIES: FeaturedProperty[] = [
     image: "/fura/properties/completed/state-school.png",
     status: "Completed",
     title: "State School New Learning Centre",
+    href: CONSTRUCTION_PAGE,
     description:
       "Open Build Pty Ltd delivered the State School New Learning Centre in Brisbane, completed in two stages within an operational school. Works included refurbishing A Block and constructing a new two-storey Public building with eight classrooms, breakout spaces, an undercroft and a tennis court, linked via a new walkway. Heritage features were preserved and strict access controls were implemented to ensure campus safety.",
   },
@@ -215,6 +227,7 @@ export const FEATURED_PROPERTIES: FeaturedProperty[] = [
     image: "/fura/properties/completed/east-primary-school.png",
     status: "Completed",
     title: "East Primary School",
+    href: CONSTRUCTION_PAGE,
     description:
       "Open Build Pty Ltd delivered the new East Primary School in South east for the Victorian School Building Authority. The campus includes modern single-storey learning buildings, flexible learning neighbourhoods, specialist facilities, a gymnasium, library and administration centre, complemented by landscaped outdoor areas and sports courts. Practical completion was achieved ahead of the 2026 school year, with the school opening in Term 1.",
   },

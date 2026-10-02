@@ -78,7 +78,7 @@ export type PortfolioCompany = {
 
 export const PORTFOLIO_COMPANIES: PortfolioCompany[] = [
   {
-    image: "/fura/images/portfolio-manufacturing.png",
+    image: "/fura/companies/manufacturing/hero.png",
     title: "Habitech Manufacturing Pty Ltd",
     href: "/companies/habitech-manufacturing",
   },
@@ -88,7 +88,7 @@ export const PORTFOLIO_COMPANIES: PortfolioCompany[] = [
     href: "/companies/habitech-construction",
   },
   {
-    image: "/fura/images/portfolio-Development.png",
+    image: "/fura/companies/development/hero-urban.png",
     title: "Habitech Development Pty Ltd",
     href: "/companies/habitech-development",
   },

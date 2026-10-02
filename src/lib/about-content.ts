@@ -164,30 +164,30 @@ export const NEWS_ITEMS: NewsItem[] = [
     image: "/fura/images/news-nus-chongqing.png",
     title:
       "Agreement signing between FURA and NUS Chongqing Institute to collaborate on Modern Methods of Construction, education and industry innovation in Australia.",
-    date: "May 2, 2026",
+    date: "2026",
   },
   {
     image: "/fura/images/news-ppap-sez.png",
     title:
       "Agreement signing between Fura and PPAP authority for the Development of a Green Special Economic Zone",
-    date: "May 2, 2026",
+    date: "2026",
   },
   {
     image: "/fura/images/news-mice-tour.png",
     title: "2026 Hospitality fund & MICE tour by FURA and HMD Asia",
-    date: "May 2, 2026",
+    date: "2026",
   },
   {
     image: "/fura/images/news-investor-event.png",
     titleLead: "Habitech Housing – Investor & Partnership Event ",
     title:
       "Showcasing sustainable and affordable housing opportunities in Australia",
-    date: "May 2, 2026",
+    date: "2026",
   },
   {
-    image: "/fura/images/news-sponsorship.png",
+    image: "/fura/images/news-cambodia-singapore-forum.png",
     title:
       "FURA group as Golden Sponsort of the Cambodia-Singapore Business Forum held by Cambodia Chamber of Commerce (CCC), the Singapore Chamber of Commerce (SCC), and the Singapore Business Federation (SBF).",
-    date: "May 2, 2026",
+    date: "2025",
   },
 ];

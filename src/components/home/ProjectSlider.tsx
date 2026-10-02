@@ -147,7 +147,7 @@ export function ProjectSlider() {
       */}
       <div
         ref={rowRef}
-        className="flex w-max gap-[34.667px] px-4 will-change-transform lg:px-[max(100px,calc((100vw-1200px)/2))]"
+        className="flex w-max gap-4 px-4 will-change-transform lg:px-[max(100px,calc((100vw-1200px)/2))]"
       >
         {Array.from({ length: COPIES }, (_, copy) =>
           PROJECTS.map((project) => (

@@ -14,7 +14,7 @@ export function ProjectCard({
   return (
     <article
       className={cn(
-        "group shrink-0 overflow-hidden rounded-[23.111px] border-[1.444px] border-border-primary bg-surface-muted",
+        "group shrink-0 overflow-hidden rounded-xl border-[1.444px] border-border-primary bg-surface-muted",
         className,
       )}
     >

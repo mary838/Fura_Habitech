@@ -14,10 +14,9 @@ import {
 import type { FeaturedProperty, PropertyListing } from "@/lib/properties-content";
 
 /**
- * Completed project tile. Read-only — there is no detail page behind these;
- * the full write-up lives on the relevant company page — so the card shows a
- * one-line title and the opening of the description in a fixed 180px panel,
- * as the frame does.
+ * Completed project tile: a one-line title and the opening of the description
+ * in a fixed 180px panel, as the frame does. A project with an `href` opens
+ * the company page that carries its full write-up; the rest are read-only.
  */
 function CompletedCard({
   property,
@@ -26,11 +25,12 @@ function CompletedCard({
   property: FeaturedProperty;
   index?: number;
 }) {
-  return (
-    <article
-      style={{ "--card-delay": `${(index % 6) * 80}ms` } as React.CSSProperties}
-      className="group flex w-full flex-col items-start gap-3 overflow-hidden rounded-2xl border border-border-primary bg-surface p-3 card-fade-in card-hover hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-12px_rgba(9,12,20,0.28)] active:-translate-y-1.5 active:shadow-[0_18px_40px_-12px_rgba(9,12,20,0.28)] touch:shadow-[0_18px_40px_-12px_rgba(9,12,20,0.28)]"
-    >
+  const cardClass =
+    "group flex w-full flex-col items-start gap-3 overflow-hidden rounded-2xl border border-border-primary bg-surface p-3 card-fade-in card-hover hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-12px_rgba(9,12,20,0.28)] active:-translate-y-1.5 active:shadow-[0_18px_40px_-12px_rgba(9,12,20,0.28)] touch:shadow-[0_18px_40px_-12px_rgba(9,12,20,0.28)]";
+  const cardStyle = { "--card-delay": `${(index % 6) * 80}ms` } as React.CSSProperties;
+
+  const body = (
+    <>
       <div className="relative h-[280px] w-full shrink-0 overflow-hidden rounded-xl">
         <Image
           src={property.image}
@@ -64,6 +64,16 @@ function CompletedCard({
           {property.description}
         </p>
       </div>
+    </>
+  );
+
+  return property.href ? (
+    <Link href={property.href} className={cardClass} style={cardStyle}>
+      {body}
+    </Link>
+  ) : (
+    <article className={cardClass} style={cardStyle}>
+      {body}
     </article>
   );
 }

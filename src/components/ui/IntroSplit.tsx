@@ -15,6 +15,12 @@ type IntroSplitProps = {
   stackGap?: "md" | "lg";
   /** Body scale: `"md"` steps up at `lg`, `"xl"` is 20px at every width. */
   paragraphSize?: "md" | "xl";
+  /**
+   * `"fixed"` holds the copy to the 520px column some frames draw, with the
+   * image pushed to the far side of the 1200px container; `"fill"` lets the
+   * copy take whatever the image leaves.
+   */
+  copyWidth?: "fill" | "fixed";
 };
 
 /**
@@ -29,6 +35,7 @@ export function IntroSplit({
   gutter = "default",
   stackGap = "md",
   paragraphSize = "md",
+  copyWidth = "fill",
 }: IntroSplitProps) {
   return (
     <section
@@ -39,13 +46,20 @@ export function IntroSplit({
     >
       <div
         className={cn(
-          "mx-auto flex w-full max-w-[1240px] flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-16",
+          "mx-auto flex w-full flex-col lg:flex-row lg:items-center lg:justify-between",
+          // 520 + 640 leaves 40px of the 1200px container between them.
+          copyWidth === "fixed"
+            ? "max-w-[1200px] lg:gap-10"
+            : "max-w-[1240px] lg:gap-16",
           stackGap === "md" ? "gap-6" : "gap-8",
         )}
       >
         <Reveal
           from="left"
-          className="flex flex-col items-start gap-6 lg:min-w-0 lg:flex-1"
+          className={cn(
+            "flex flex-col items-start gap-6 lg:min-w-0",
+            copyWidth === "fixed" ? "lg:w-[520px]" : "lg:flex-1",
+          )}
         >
           <h2 className="w-full text-display-xs font-medium text-title lg:text-display-md">
             {title}

@@ -14,7 +14,7 @@ import {
  */
 export function OrganigramSection() {
   return (
-    <section className="w-full bg-surface-muted px-4 py-8 lg:px-[100px] lg:py-24">
+    <section className="w-full bg-surface-muted px-4 py-8 lg:p-[100px]">
       <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 lg:gap-12">
         <SectionHeading
           align="center"
