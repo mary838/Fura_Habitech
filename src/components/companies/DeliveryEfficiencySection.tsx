@@ -12,7 +12,6 @@ export function DeliveryEfficiencySection() {
         gap="xs"
         title="Modular delivery targets labour and time efficiency"
         description="More work moves into a controlled factory environment while site works progress in parallel."
-        descriptionSize="base"
       />
 
       <div className="flex w-full flex-col gap-6 lg:flex-row lg:items-start lg:gap-10">

@@ -6,7 +6,8 @@ import type { Partner } from "@/lib/home-content";
 export function PartnerCell({
   logo,
   name,
-  logoClassName,
+  crop,
+  cover = false,
   className,
 }: Partner & { className?: string }) {
   return (
@@ -18,13 +19,27 @@ export function PartnerCell({
     >
       <div className="flex min-w-0 flex-1 flex-col items-start gap-0.5">
         <div className="relative h-[70px] w-full overflow-hidden">
-          <Image
-            src={logo}
-            alt={name}
-            fill
-            sizes="227px"
-            className={`object-contain ${logoClassName ?? ""}`}
-          />
+          {crop ? (
+            <div
+              className="absolute"
+              style={{
+                top: `${crop.top}%`,
+                left: `${crop.left}%`,
+                width: `${crop.width}%`,
+                height: `${crop.height}%`,
+              }}
+            >
+              <Image src={logo} alt={name} fill sizes="227px" />
+            </div>
+          ) : (
+            <Image
+              src={logo}
+              alt={name}
+              fill
+              sizes="227px"
+              className={cover ? "object-cover" : "object-contain"}
+            />
+          )}
         </div>
         <p className="w-full text-center text-xs font-medium text-subtitle">
           {name}

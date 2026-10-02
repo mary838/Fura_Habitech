@@ -29,6 +29,7 @@ export default function TheLakesPage() {
         propertyPath="/properties/the-lakes"
       />
       <TheLakesDetailSection
+        brochureSlug="the-lakes"
         title="The Lakes"
         description={THE_LAKES_DESCRIPTION}
         price={THE_LAKES_PRICE}

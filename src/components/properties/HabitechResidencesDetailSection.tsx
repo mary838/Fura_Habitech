@@ -7,6 +7,7 @@ import {
   HABITECH_RESIDENCES_GALLERY,
   HABITECH_RESIDENCES_SPECS,
 } from "@/lib/properties-content";
+import { BrochureButton } from "@/components/ui/BrochureButton";
 
 export function HabitechResidencesDetailSection() {
   return (
@@ -99,19 +100,10 @@ export function HabitechResidencesDetailSection() {
           ))}
         </div>
 
-        <a
-          href="#contact-form"
+        <BrochureButton
+          slug="habitech-residences"
           className="order-4 flex w-full items-center justify-center gap-1.5 overflow-hidden rounded-full border border-brand-primary bg-surface px-[18px] py-3 text-base font-semibold text-subtitle transition-colors hover:bg-surface-muted active:bg-surface-muted"
-        >
-          <Image
-            src="/fura/icons/download-cloud-02.svg"
-            alt=""
-            width={20}
-            height={20}
-            className="size-5"
-          />
-          Download Project Brochure
-        </a>
+        />
       </div>
     </section>
   );

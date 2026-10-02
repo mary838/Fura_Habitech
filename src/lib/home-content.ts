@@ -117,31 +117,31 @@ export type GovernanceItem = {
 
 export const GOVERNANCE_ITEMS: GovernanceItem[] = [
   {
-    num: "01",
+    num: "1",
     title: "AFS licence oversight",
     description:
       "Fura habitech benefit from CODA.  Asset Management holds AFSL 389315 and supervises the financial-services activities within its authorisations.",
   },
   {
-    num: "02",
+    num: "2",
     title: "Formal investment management",
     description:
       "CODA is appointed to manage the portfolio and deployment of investor capital under the Investment Management Agreement.",
   },
   {
-    num: "03",
+    num: "3",
     title: "Security trustee",
     description:
       "Fura Habitech holds relevant security on behalf of bondholders under the Security Trust Deed.",
   },
   {
-    num: "04",
+    num: "4",
     title: "Global Asset Backing",
     description:
       "Fura Habitech investment management company, with FURA Australia as guarantor, holds..",
   },
   {
-    num: "05",
+    num: "5",
     title: "Stage-Gated Investment",
     description:
       "Capital deployed progressively across the project lifecycle — from SPV and land acquisition to construction, materials and unit sales or leasing.",
@@ -151,8 +151,13 @@ export const GOVERNANCE_ITEMS: GovernanceItem[] = [
 export type Partner = {
   logo: string;
   name: string;
-  /** Per-logo fit tweaks taken from the Figma frame crops. */
-  logoClassName?: string;
+  /**
+   * The logo's box relative to the 70px logo slot, in % — Figma's fill crop,
+   * which enlarges logos whose files carry wide transparent margins. Without
+   * one the logo is contained in the slot (or covers it with `cover`).
+   */
+  crop?: { top: number; left: number; width: number; height: number };
+  cover?: boolean;
 };
 
 export const PARTNERS: Partner[] = [
@@ -160,22 +165,29 @@ export const PARTNERS: Partner[] = [
   {
     logo: "/fura/partners/fura-capital.png",
     name: "Fura Capital Pte Ltd",
-    logoClassName: "scale-[1.2]",
+    crop: { top: 0.31, left: 22.26, width: 51.72, height: 120.18 },
   },
   { logo: "/fura/partners/jane-box.png", name: "Jane-Box Co., Ltd" },
-  { logo: "/fura/partners/open-build.png", name: "Open Build Pty Ltd" },
+  {
+    logo: "/fura/partners/open-build.png",
+    name: "Open Build Pty Ltd",
+    crop: { top: 0, left: 6.01, width: 87.99, height: 134.29 },
+  },
   {
     logo: "/fura/partners/national-university.png",
     name: "National University",
+    cover: true,
   },
   {
     logo: "/fura/partners/trade-investment-queensland.png",
     name: "Trade Investment Queenland",
+    crop: { top: -52.68, left: -14.59, width: 125.64, height: 191.96 },
   },
   { logo: "/fura/partners/ty-consultant.png", name: "TY Consultant Pty Ltd" },
   {
     logo: "/fura/partners/aad-sourcing.png",
     name: "AAD Sourcing Solutions Pty Ltd",
+    crop: { top: 13.56, left: 5.97, width: 88.11, height: 72.37 },
   },
   {
     logo: "/fura/partners/vertium.png",

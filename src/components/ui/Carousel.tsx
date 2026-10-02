@@ -8,6 +8,12 @@ type CarouselProps = {
   className?: string;
   /** Accessible name for the scrollable region. */
   label: string;
+  /**
+   * From `lg`, run the row past the container to the right edge of the
+   * screen, so the next card peeks in (the About page's News frame). The
+   * section must clip horizontal overflow (`overflow-x-clip`).
+   */
+  bleed?: boolean;
 };
 
 /**
@@ -17,7 +23,12 @@ type CarouselProps = {
  * and keyboard whether or not the buttons are reachable — they only paginate
  * it.
  */
-export function Carousel({ children, className, label }: CarouselProps) {
+export function Carousel({
+  children,
+  className,
+  label,
+  bleed = false,
+}: CarouselProps) {
   const { trackRef, active, step } = useCarouselControls();
 
   return (
@@ -43,7 +54,13 @@ export function Carousel({ children, className, label }: CarouselProps) {
           // doesn't add layout height) gives a hovered card's lifted box-shadow
           // room to render before `overflow-x-auto` — which clips both axes —
           // cuts it off.
-          "lg:mx-0 lg:w-full lg:px-0",
+          // With `bleed` the right edge moves out by the gutter right of the
+          // 1200px container — (viewport - 1200) / 2, never less than the
+          // section's 100px padding — and pads back in by the same amount so
+          // the last card can still scroll fully into view.
+          bleed
+            ? "lg:-mr-[max(100px,calc((100vw-1200px)/2))] lg:ml-0 lg:w-auto lg:pr-[max(100px,calc((100vw-1200px)/2))] lg:pl-0"
+            : "lg:mx-0 lg:w-full lg:px-0",
           className,
         )}
       >

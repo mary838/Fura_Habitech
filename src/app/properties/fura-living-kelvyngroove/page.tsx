@@ -29,6 +29,7 @@ export default function FuraLivingKelvyngroovePage() {
         propertyPath="/properties/fura-living-kelvyngroove"
       />
       <FuraLivingDetailSection
+        brochureSlug="fura-living-kelvyngroove"
         title="Fura Living, Kelvyngroove Village"
         description={FURA_LIVING_KELVYNGROOVE_DESCRIPTION}
         price={FURA_LIVING_KELVYNGROOVE_PRICE}

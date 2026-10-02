@@ -8,6 +8,8 @@ type CompanyHeroProps = {
   subtitle: string;
   /** Omitted on pages whose hero has no third line. */
   tagline?: string;
+  /** `"title"` sets the tagline in white, for frames that don't grey it. */
+  taglineTone?: "subtitle" | "title";
   ctaLabel: string;
   ctaHref: string;
   /** Raw `background-image` for the scrim, where a frame sets its own. */
@@ -37,6 +39,7 @@ export function CompanyHero({
   title,
   subtitle,
   tagline,
+  taglineTone = "subtitle",
   ctaLabel,
   ctaHref,
   overlayImage = DEFAULT_OVERLAY,
@@ -90,7 +93,12 @@ export function CompanyHero({
         </div>
         {tagline ? (
           <p
-            className="hero-rise w-full text-xl text-subtitle-inverse"
+            className={cn(
+              "hero-rise w-full text-xl",
+              taglineTone === "title"
+                ? "text-title-inverse"
+                : "text-subtitle-inverse",
+            )}
             style={{ animationDelay: "180ms" }}
           >
             {tagline}

@@ -3,14 +3,13 @@ import { pageMetadata } from "@/lib/seo";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageSchema } from "@/components/seo/PageSchema";
 import { BuildingSystemsSection } from "@/components/companies/BuildingSystemsSection";
-import { DevelopmentHeroSection } from "@/components/companies/DevelopmentHeroSection";
-import { EnvironmentalSection } from "@/components/companies/EnvironmentalSection";
+import { CompanyHero } from "@/components/companies/CompanyHero";
 import { WhatWeOfferSection } from "@/components/companies/WhatWeOfferSection";
 
 export const metadata: Metadata = pageMetadata({
   title: "Habitech Development",
   description:
-    "Integrated construction solutions. Crafting excellence, building success.",
+    "Architecture and urban planning company. Architecture, master planning and urban design.",
   path: "/companies/habitech-development",
 });
 
@@ -23,9 +22,18 @@ export default function HabitechDevelopmentPage() {
           { name: "Habitech Development", path: "/companies/habitech-development" },
         ]}
       />
-      <DevelopmentHeroSection />
+      <CompanyHero
+        image="/fura/companies/development/hero-urban.png"
+        title="Habitech Development Pty Ltd"
+        subtitle="Architecture and Urban Planning Company"
+        tagline="Architecture, Master Planning & Urban Design"
+        taglineTone="title"
+        ctaLabel="Partner With Us"
+        ctaHref="#contact-form"
+        align="center"
+        copyWidth="wide"
+      />
       <WhatWeOfferSection />
-      <EnvironmentalSection />
       <BuildingSystemsSection />
     </PageShell>
   );

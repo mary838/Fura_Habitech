@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { Strategy } from "@/lib/home-content";
 
 /**
- * Full-bleed investment-strategy tile used in the "Our Investment Strategies"
+ * Full-bleed investment-strategy tile used in the "Investment Framework"
  * section: photo under a diagonal scrim, with the icon, title and description
  * pinned to the bottom edge.
  */

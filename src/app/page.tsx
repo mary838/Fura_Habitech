@@ -12,10 +12,10 @@ export default function Home() {
     <PageShell nav="transparent">
       <HousingHero />
       <AboutSection />
+      <GovernanceSection />
       <StrategiesSection />
       <PortfolioSection />
       <OurProjectsSection />
-      <GovernanceSection />
       <PartnerRibbon />
     </PageShell>
   );

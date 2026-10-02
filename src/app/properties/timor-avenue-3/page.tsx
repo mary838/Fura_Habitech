@@ -28,6 +28,7 @@ export default function TimorAvenue3Page() {
         propertyPath="/properties/timor-avenue-3"
       />
       <TimorAvenueDetailSection
+        brochureSlug="timor-avenue-3"
         image={TIMOR_AVENUE_3_IMAGE}
         price={TIMOR_AVENUE_3_PRICE}
         specs={TIMOR_AVENUE_3_SPECS}

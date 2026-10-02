@@ -218,6 +218,24 @@ export const FEATURED_PROPERTIES: FeaturedProperty[] = [
     description:
       "Open Build Pty Ltd delivered the new East Primary School in South east for the Victorian School Building Authority. The campus includes modern single-storey learning buildings, flexible learning neighbourhoods, specialist facilities, a gymnasium, library and administration centre, complemented by landscaped outdoor areas and sports courts. Practical completion was achieved ahead of the 2026 school year, with the school opening in Term 1.",
   },
+  {
+    image: "/fura/properties/completed/prefab-north-gosford.png",
+    status: "Completed",
+    title: "8 Units – Prefab Houses",
+    description: "89 Glennie Street, North Gosford, Sydney",
+  },
+  {
+    image: "/fura/properties/completed/prefab-doncaster-east.png",
+    status: "Completed",
+    title: "7 Units – Prefab Houses",
+    description: "7-8 Blanche Court, Doncaster East, Melbourne",
+  },
+  {
+    image: "/fura/properties/completed/prefab-colebee.png",
+    status: "Completed",
+    title: "1 Unit- Prefab House",
+    description: "36 MEDALLIST PARADE, COLEBEE, Sydney",
+  },
 ];
 
 export const CONTACT_VALUES: { icon: string; title: string; body: string }[] = [

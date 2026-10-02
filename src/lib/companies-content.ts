@@ -105,15 +105,15 @@ export const DELIVERY_IMAGES: { src: string; alt: string }[] = [
     alt: "Modules assembled in the factory",
   },
   {
-    src: "/fura/companies/manufacturing/delivery-2.png",
+    src: "/fura/companies/manufacturing/delivery-2.jpg",
     alt: "Packaged modules loaded for shipping",
   },
   {
-    src: "/fura/companies/manufacturing/delivery-3.png",
+    src: "/fura/companies/manufacturing/delivery-3.jpg",
     alt: "A module in transport to site",
   },
   {
-    src: "/fura/companies/manufacturing/delivery-4.png",
+    src: "/fura/companies/manufacturing/delivery-4.jpg",
     alt: "Cranes placing modules during on-site assembly",
   },
 ];
@@ -235,45 +235,6 @@ export const BUILDING_SYSTEMS: BuildingSystem[] = [
       "Precast concrete combines factory-controlled precision with faster installation, durability and reduced on-site impact. The system supports energy-efficient construction, strong structural performance and a wide variety of architectural finishes.",
   },
 ];
-
-export type SustainabilityPillar = {
-  title: string;
-  description: string;
-};
-
-export const SUSTAINABILITY_PILLARS: SustainabilityPillar[] = [
-  {
-    title: "Sustainable by Design",
-    description:
-      "We consider sustainability from the earliest stages of planning — balancing architectural quality, functionality, energy performance and long-term environmental impact.",
-  },
-  {
-    title: "Energy-Efficient Living",
-    description:
-      "Smart design strategies, natural light, ventilation, insulation and efficient systems help reduce energy use and create healthier, more comfortable homes.",
-  },
-  {
-    title: "Responsible Materials",
-    description:
-      "We prioritise durable, low-impact and responsibly sourced materials where appropriate—reducing environmental impact while maintaining quality and performance.",
-  },
-  {
-    title: "Climate-Smart Design",
-    description:
-      "We prioritise durable, low-impact and responsibly sourced materials where appropriate—reducing environmental impact while maintaining quality and performance.",
-  },
-  {
-    title: "Smarter Construction",
-    description:
-      "Through integrated design, manufacturing and construction processes, we explore efficient building methods that can reduce material waste and improve consistency.",
-  },
-  {
-    title: "Designed for the Long Term",
-    description:
-      "Sustainability is also about longevity. We design adaptable, resilient places that can continue to serve residents and communities well into the future.",
-  },
-];
-
 
 export const PROPERTY_SHOWCASE: { image: string; label: string }[] = [
   { image: "/fura/companies/property/showcase-l.png", label: "Type L floor plan" },

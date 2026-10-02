@@ -6,7 +6,7 @@ import { NEWS_ITEMS } from "@/lib/about-content";
 
 export function NewsSection() {
   return (
-    <Section gap="xl-tight" reveal className="bg-surface">
+    <Section gap="xl-tight" reveal className="overflow-x-clip bg-surface">
       <SectionHeading
         gap="sm"
         title="News & Events"
@@ -16,10 +16,12 @@ export function NewsSection() {
 
       {/*
         More cards than fit the container at any width, so the row scrolls at
-        every breakpoint and the arrows page through it.
+        every breakpoint and the arrows page through it. On desktop it runs to
+        the screen's right edge, as the frame does, with the fourth card
+        peeking in.
       */}
-      <Carousel label="News and events">
-        {/* Keyed by image: two entries share a headline, the photos differ. */}
+      <Carousel label="News and events" bleed>
+        {/* Keyed by image, which is unique per story. */}
         {NEWS_ITEMS.map((item) => (
           <NewsCard key={item.image} {...item} />
         ))}

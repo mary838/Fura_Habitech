@@ -2,21 +2,104 @@
 
 export type OrganigramEntry = {
   name: string;
+  description?: string;
   country: string;
+  /** Company logo in /public, drawn at its design size. */
+  logo: { src: string; width: number; height: number };
+  /**
+   * City-skyline card art, multiplied over white at 50%. `crop` is the
+   * image's box relative to the card in the design (Figma's fill crop), in %.
+   */
+  texture: {
+    src: string;
+    crop: { top: number; left: number; width: number; height: number };
+    multiply?: boolean;
+  };
+  /** Long names drop to 14/20 so they stay on one line in a 193px card. */
+  compactName?: boolean;
 };
 
+const ORG = "/fura/organigram";
+
 export const ORGANIGRAM_PARENT: OrganigramEntry = {
-  name: "Fura Capital Pte Ltd",
+  name: "HOLDING COMPANY",
   country: "Singapore",
+  logo: { src: `${ORG}/logo-fura-capital.png`, width: 184, height: 98 },
+  texture: {
+    src: `${ORG}/texture-singapore.webp`,
+    crop: { top: -26.87, left: -0.06, width: 100.11, height: 136.22 },
+    multiply: true,
+  },
 };
 
 export const ORGANIGRAM_SUBSIDIARIES: OrganigramEntry[] = [
-  { name: "Fura Landbank Fund", country: "Singapore" },
-  { name: "Furi Corporation", country: "Cambodia" },
-  { name: "Fari Inc", country: "USA" },
-  { name: "Fura Japan", country: "Japan" },
-  { name: "Fura Chongqing", country: "China" },
-  { name: "Fura Australia", country: "Australia" },
+  {
+    name: "FURA TRUST",
+    description: "Landbank and investment management",
+    country: "Singapore",
+    logo: { src: `${ORG}/logo-fura-trust.png`, width: 68, height: 30 },
+    texture: {
+      src: `${ORG}/texture-singapore.webp`,
+      crop: { top: -8.48, left: -0.06, width: 99.58, height: 121.17 },
+    },
+  },
+  {
+    name: "FURA INVESTMENT",
+    description: "Tourism & Industry Development",
+    country: "Cambodia",
+    logo: { src: `${ORG}/logo-fura-investment.png`, width: 83, height: 36 },
+    texture: {
+      src: `${ORG}/texture-cambodia.webp`,
+      crop: { top: 4.49, left: 0.48, width: 99.76, height: 117.76 },
+      multiply: true,
+    },
+  },
+  {
+    name: "FURI Inc",
+    description: "Real asset & Banking",
+    country: "United States",
+    logo: { src: `${ORG}/logo-furi.svg`, width: 49, height: 24 },
+    texture: {
+      src: `${ORG}/texture-usa.webp`,
+      crop: { top: 13.86, left: 0, width: 100, height: 103.33 },
+      multiply: true,
+    },
+  },
+  {
+    name: "FURA JAPAN",
+    description: "Fund Management",
+    country: "Japan",
+    logo: { src: `${ORG}/logo-fura-japan.svg`, width: 104, height: 21 },
+    texture: {
+      src: `${ORG}/texture-japan.webp`,
+      crop: { top: 21.9, left: -0.06, width: 99.4, height: 78.91 },
+      multiply: true,
+    },
+  },
+  {
+    name: "FURA CHONGQING",
+    description: "Trade & Investment Platform",
+    country: "China",
+    logo: { src: `${ORG}/logo-fura-chongqing.png`, width: 68, height: 30 },
+    texture: {
+      src: `${ORG}/texture-china.webp`,
+      crop: { top: 11.85, left: -1.14, width: 102.29, height: 112.92 },
+      multiply: true,
+    },
+    compactName: true,
+  },
+  {
+    name: "FURA AUSTRALIA",
+    description: "Fund Management & Housing Development",
+    country: "Australia",
+    logo: { src: `${ORG}/logo-fura-australia.png`, width: 65, height: 30 },
+    texture: {
+      src: `${ORG}/texture-australia.webp`,
+      crop: { top: -12.38, left: 0.71, width: 99.29, height: 178.54 },
+      multiply: true,
+    },
+    compactName: true,
+  },
 ];
 
 /**
@@ -92,12 +175,6 @@ export const NEWS_ITEMS: NewsItem[] = [
   {
     image: "/fura/images/news-mice-tour.png",
     title: "2026 Hospitality fund & MICE tour by FURA and HMD Asia",
-    date: "May 2, 2026",
-  },
-  {
-    image: "/fura/images/news-business-forum.png",
-    title:
-      "FURA group as Golden Sponsort of the Cambodia-Singapore Business Forum held by Cambodia Chamber of Commerce (CCC), the Singapore Chamber of Commerce (SCC), and the Singapore Business Federation (SBF).",
     date: "May 2, 2026",
   },
   {

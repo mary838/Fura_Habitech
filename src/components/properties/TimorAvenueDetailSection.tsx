@@ -2,8 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { SplitLines } from "@/components/ui/SplitLines";
+import { BrochureButton } from "@/components/ui/BrochureButton";
 
 type TimorAvenueDetailSectionProps = {
+  /** Page slug; the brochure is `/fura/brochures/<slug>.pdf`. */
+  brochureSlug: string;
   image: string;
   price: string;
   specs: { icon: string; label: string; value: string }[];
@@ -20,6 +23,7 @@ type TimorAvenueDetailSectionProps = {
  * specs table differ per unit.
  */
 export function TimorAvenueDetailSection({
+  brochureSlug,
   image,
   price,
   specs,
@@ -129,19 +133,10 @@ export function TimorAvenueDetailSection({
             ))}
           </div>
 
-          <a
-            href="#contact-form"
+          <BrochureButton
+            slug={brochureSlug}
             className="flex w-full items-center justify-center gap-1.5 overflow-hidden rounded-full border border-brand-primary bg-surface px-[18px] py-3 text-base font-semibold text-subtitle transition-colors hover:bg-surface-muted active:bg-surface-muted"
-          >
-            <Image
-              src="/fura/icons/download-cloud-02.svg"
-              alt=""
-              width={20}
-              height={20}
-              className="size-5"
-            />
-            Download Project Brochure
-          </a>
+          />
         </div>
       </div>
     </section>

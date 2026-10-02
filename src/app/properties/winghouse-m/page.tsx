@@ -29,6 +29,7 @@ export default function WinghouseMPage() {
         propertyPath="/properties/winghouse-m"
       />
       <WinghouseDetailSection
+        brochureSlug="winghouse-m"
         title="Winghouse M"
         description={WINGHOUSE_M_DESCRIPTION}
         price={WINGHOUSE_M_PRICE}

@@ -11,7 +11,7 @@ export function StrategiesSection() {
       <div className="flex w-full flex-col items-start gap-4 lg:items-center lg:gap-8">
         <SectionHeading
           align="center-lg"
-          title="Our Investment Strategies"
+          title="Investment Framework"
           description="Investors select a class; each class is governed by its applicable offer documents."
           descriptionSize="base"
         />

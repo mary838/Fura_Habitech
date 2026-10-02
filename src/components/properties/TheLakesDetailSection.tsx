@@ -3,8 +3,11 @@ import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { SplitLines } from "@/components/ui/SplitLines";
 import { TheLakesGallery } from "@/components/properties/TheLakesGallery";
+import { BrochureButton } from "@/components/ui/BrochureButton";
 
 type TheLakesDetailSectionProps = {
+  /** Page slug; the brochure is `/fura/brochures/<slug>.pdf`. */
+  brochureSlug: string;
   title: string;
   description: string;
   price: string;
@@ -14,6 +17,7 @@ type TheLakesDetailSectionProps = {
 
 /** Layout for The Lakes detail page. */
 export function TheLakesDetailSection({
+  brochureSlug,
   title,
   description,
   price,
@@ -109,19 +113,10 @@ export function TheLakesDetailSection({
             ))}
           </div>
 
-          <a
-            href="#contact-form"
+          <BrochureButton
+            slug={brochureSlug}
             className="flex w-full items-center justify-center gap-1.5 overflow-hidden rounded-full border border-utility-gray-900 bg-surface px-[18px] py-3 text-base font-semibold text-title transition-colors hover:bg-surface-muted active:bg-surface-muted"
-          >
-            <Image
-              src="/fura/icons/download-cloud-02.svg"
-              alt=""
-              width={20}
-              height={20}
-              className="size-5"
-            />
-            Download Project Brochure
-          </a>
+          />
         </div>
       </div>
     </section>
